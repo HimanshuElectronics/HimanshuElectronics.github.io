@@ -18,7 +18,7 @@
       r[1].forEach(function (x) { b[x.id] = x; }); r[2].forEach(function (x) { c[x.id] = x; });
       r[0].forEach(function (p) {
         if (!p || !p.name || (p.status != null && p.status !== 'published')) return;
-        byId[String(p.id)] = { id: p.id, name: p.name, slug: p.slug || p.id, brand: b[p.brandId] ? b[p.brandId].name : '', pack: p.packagingInfo || '', price: parseFloat(p.price) > 0 ? parseFloat(p.price) : 0, order: p.sortOrder || 0,
+        byId[String(p.id)] = { id: p.id, name: p.name, slug: p.slug || p.id, brand: b[p.brandId] ? b[p.brandId].name : '', pack: p.packagingInfo || '', price: parseFloat(p.price) > 0 ? parseFloat(p.price) : 0, order: p.sortOrder || 0, cat: c[p.categoryId] ? c[p.categoryId].name : '',
           img: p.images && p.images.length ? 'assets/images/products/' + encodeURIComponent(p.images[0]) : '', icon: c[p.categoryId] ? c[p.categoryId].icon : 'i-box' };
       });
       return byId;
@@ -53,7 +53,7 @@
       '<div class="enq__body" data-enq-body></div>' +
       '<footer class="enq__foot" data-enq-foot><div class="enq__total" data-enq-totalrow><span>Estimated total (at MRP)</span><strong data-enq-total></strong></div>' +
       '<p class="enq__note">Final wholesale prices are confirmed by the shop on WhatsApp.</p>' +
-      '<a class="btn btn--block enq__send" data-enq-send target="_blank" rel="noopener"><i class="ri-whatsapp-line" aria-hidden="true"></i> Send list on WhatsApp</a>' +
+      '<a class="btn btn--block enq__send" href="order.html"><i class="ri-shopping-bag-3-line" aria-hidden="true"></i> Place order</a>' +
       '<button type="button" class="enq__clear" data-enq-clear>Clear list</button></footer></aside>' +
       '<div class="enq-confirm" data-enq-confirm hidden><div class="enq-confirm__box" role="alertdialog"><h3>Clear your list?</h3><p>All products will be removed from your enquiry list.</p><div class="enq-confirm__actions"><button type="button" class="btn btn--ghost" data-enq-no>Keep list</button><button type="button" class="btn" data-enq-yes>Yes, clear</button></div></div></div>';
     document.body.appendChild(drawer);
@@ -83,7 +83,6 @@
     drawer.querySelector('[data-enq-foot]').hidden = n === 0;
     var tt = total(); drawer.querySelector('[data-enq-totalrow]').hidden = !tt;
     drawer.querySelector('[data-enq-total]').textContent = '₹' + tt.toLocaleString('en-IN');
-    drawer.querySelector('[data-enq-send]').href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(message());
     if (!n) { body.innerHTML = '<div class="enq__empty"><i class="ri-file-list-3-line" aria-hidden="true"></i><p class="enq__empty-title">Your list is empty</p><p>Tap + on the products you need. Then send the whole list to us on WhatsApp.</p><a href="products.html" class="btn">Browse products</a></div>'; return; }
     body.innerHTML = '<ul class="enq__items">' + ids().filter(function (id) { return byId[id]; }).sort(function (a, b) { return byId[a].order - byId[b].order; }).map(function (id) {
       var p = byId[id], href = 'product.html?slug=' + encodeURIComponent(p.slug);
@@ -118,5 +117,9 @@
     new MutationObserver(function () { if (pending) return; pending = true; requestAnimationFrame(function () { pending = false; refreshButtons(); }); }).observe(document.body, { childList: true, subtree: true });
     window.addEventListener('storage', function (e) { if (e.key === KEY) { load(); refresh(); } });
   }
+  var listeners = [];
+  var _changed = changed;
+  changed = function () { _changed(); listeners.forEach(function (f) { try { f(); } catch (x) {} }); };
+  window.HE_enq = { ids: ids, qty: qty, item: function (id) { return byId[String(id)] || null; }, total: total, catalog: catalog, open: open, onChange: function (f) { listeners.push(f); }, KEY: KEY, CKEY: 'he_customer_v1' };
   init();
 })();

@@ -488,4 +488,24 @@ main,.footer,.trust{position:relative;z-index:2}
 .bcard--big .bcard__name{font-size:20px}.bcard__desc{font-weight:400;font-size:14px;color:#5b667f}.bcard__count{font-size:13px;color:#8a5a00;font-weight:600;margin-top:auto}
 html{touch-action:pan-x pan-y}
 @media(max-width:560px){.enq-fab{bottom:78px}.enq-toast{bottom:144px}}
+
+/* ---------- order page + home teasers ---------- */
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.teaser{border-radius:16px;padding:28px;display:flex;flex-direction:column;align-items:flex-start;gap:12px;min-width:0}
+.teaser--dark{background:linear-gradient(160deg,var(--navy-700),var(--navy-900));border:1px solid var(--line)}
+.teaser--light{background:#fff;color:var(--ink)}
+.teaser__title{font-size:24px;line-height:1.2}
+.teaser__text{color:var(--mut);max-width:44ch}.teaser--light .teaser__text{color:#4a5775}
+.teaser__list{list-style:none;padding:0;display:grid;gap:6px;color:var(--yellow);font-size:14px;margin-bottom:6px}
+.ocard{background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:16px;padding:18px}
+.ocard__head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
+.ocard__head h2{font-size:18px}.ocard__edit{border:0;background:none;color:var(--yellow);font-weight:600;cursor:pointer;font-family:inherit}
+.otable-wrap{overflow-x:auto}
+.otable{width:100%;border-collapse:collapse;font-size:14px}
+.otable th,.otable td{padding:10px 6px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.otable .num{text-align:right;white-space:nowrap}
+.otable__name{font-weight:600;color:#fff;display:block}.otable__meta,.otable__na{font-size:12px;color:var(--mut)}
+.otable tfoot th{font-size:15px;color:var(--yellow)}
+.ferr{display:block;color:#ff9b9b;font-size:13px;margin-top:4px}
+@media(max-width:800px){.duo{grid-template-columns:minmax(0,1fr)}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
