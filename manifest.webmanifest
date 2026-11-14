@@ -1,0 +1,16 @@
+{
+  "name": "Himanshu Electronics",
+  "short_name": "Himanshu",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0b2147",
+  "theme_color": "#0b2147",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

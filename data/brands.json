@@ -1,0 +1,26 @@
+[
+  {
+    "id": 101,
+    "name": "Orient",
+    "slug": "orient",
+    "isActive": true,
+    "sortOrder": 1,
+    "description": "Fans and lighting."
+  },
+  {
+    "id": 102,
+    "name": "Fybros",
+    "slug": "fybros",
+    "isActive": true,
+    "sortOrder": 2,
+    "description": "Fans."
+  },
+  {
+    "id": 103,
+    "name": "Havells",
+    "slug": "havells",
+    "isActive": true,
+    "sortOrder": 3,
+    "description": "Wires, fans, lighting and appliances."
+  }
+]

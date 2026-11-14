@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Wires & Cables",
+    "slug": "wires",
+    "icon": "i-wire",
+    "sub": "Home & contractor",
+    "sortOrder": 1
+  },
+  {
+    "id": 2,
+    "name": "Fans",
+    "slug": "fans",
+    "icon": "i-fan",
+    "sub": "All sizes",
+    "sortOrder": 2
+  },
+  {
+    "id": 3,
+    "name": "Lighting & Bulbs",
+    "slug": "lighting",
+    "icon": "i-bulb",
+    "sub": "LED & more",
+    "sortOrder": 3
+  },
+  {
+    "id": 4,
+    "name": "Irons",
+    "slug": "irons",
+    "icon": "i-iron",
+    "sub": "Everyday use",
+    "sortOrder": 4
+  },
+  {
+    "id": 5,
+    "name": "Home Appliances",
+    "slug": "appliances",
+    "icon": "i-kettle",
+    "sub": "For every home",
+    "sortOrder": 5
+  },
+  {
+    "id": 6,
+    "name": "Repaired TVs",
+    "slug": "tv",
+    "icon": "i-tv",
+    "sub": "Tested & ready",
+    "sortOrder": 6
+  }
+]

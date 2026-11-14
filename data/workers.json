@@ -1,0 +1,52 @@
+{
+  "_note": "Placeholder technicians. Replace names, skills, areas with the real workers (run: python3 addworker.py).",
+  "workers": [
+    {
+      "id": "tech-1",
+      "name": "Technician 1",
+      "role": "Fan & cooler specialist",
+      "skills": [
+        "Fan repair",
+        "Cooler repair"
+      ],
+      "area": "Bijnor city",
+      "exp": "Experience: add years",
+      "available": true
+    },
+    {
+      "id": "tech-2",
+      "name": "Technician 2",
+      "role": "LED & TV repair",
+      "skills": [
+        "LED / TV repair"
+      ],
+      "area": "Bijnor city",
+      "exp": "Experience: add years",
+      "available": true
+    },
+    {
+      "id": "tech-3",
+      "name": "Technician 3",
+      "role": "Wiring & fitting",
+      "skills": [
+        "Wiring & fitting",
+        "Fan repair"
+      ],
+      "area": "Bijnor and nearby",
+      "exp": "Experience: add years",
+      "available": true
+    },
+    {
+      "id": "tech-4",
+      "name": "Technician 4",
+      "role": "Iron & small appliances",
+      "skills": [
+        "Iron repair",
+        "Cooler repair"
+      ],
+      "area": "Bijnor city",
+      "exp": "Experience: add years",
+      "available": true
+    }
+  ]
+}

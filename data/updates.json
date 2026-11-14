@@ -1,0 +1,26 @@
+[
+  {
+    "id": 3,
+    "title": "Home service now open",
+    "text": "Book a worker for fan, iron, LED, TV and cooler repair",
+    "date": "2026-11-13",
+    "link": "repair.html",
+    "isActive": true
+  },
+  {
+    "id": 2,
+    "title": "Wholesale rates for dealers",
+    "text": "Fans, wires, lighting, irons and appliances",
+    "date": "2026-11-13",
+    "link": "wholesale.html",
+    "isActive": true
+  },
+  {
+    "id": 1,
+    "title": "Open every day",
+    "text": "9:30 AM to 9:00 PM \u00b7 Call 9639228237",
+    "date": "2026-11-13",
+    "link": "contact.html",
+    "isActive": true
+  }
+]

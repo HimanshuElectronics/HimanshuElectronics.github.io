@@ -2,193 +2,94 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <title>Himanshu Electronics | Wholesale Electrical Appliances</title>
-<meta name="description" content="Himanshu Electronics: wholesale fans, wires, cables, lighting, home appliances and repaired TVs. Orient, Fybros, Havells and more. Call 9639228237.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b1830'/%3E%3Cpath d='M18 3L7 18h7l-2 11 11-15h-7z' fill='%23ffc20e'/%3E%3C/svg%3E">
+<meta name="description" content="Himanshu Electronics: wholesale fans, wires, lighting, irons, home appliances and repaired TVs. Orient, Fybros, Havells and more. Call 9639228237.">
+<meta name="theme-color" content="#0b2147">
+<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon.svg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b2147'/%3E%3Cpath d='M18 3L7 18h7l-2 11 11-15h-7z' fill='%23ffc107'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://d2ol7oe51mr4n9.cloudfront.net" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","name":"Himanshu Electronics","telephone":"+91-9639228237","description":"Wholesale electrical appliances: fans, wires, lighting, home appliances, repaired TVs."}</script>
-<style>
-.loader{position:fixed;inset:0;z-index:100;background:var(--night);display:grid;place-items:center;transition:opacity .6s,visibility .6s}
-.loader.done{opacity:0;visibility:hidden}
-.loader svg{width:56px;height:56px;animation:spin 1.6s cubic-bezier(.6,0,.3,1) infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.track{position:relative;height:420vh;background:var(--night)}
-.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:var(--night)}
-.stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(11,24,48,.62) 0,rgba(11,24,48,0) 38%),linear-gradient(0deg,rgba(11,24,48,.6) 0,rgba(11,24,48,0) 34%)}
-.hero{position:absolute;left:0;right:0;top:92px;padding:0 var(--pad);text-align:center;perspective:900px;pointer-events:none}
-.hero-in{transform-origin:50% 100%;will-change:transform,opacity}
-.hero h1{font-size:clamp(38px,7vw,84px);line-height:.98;letter-spacing:-.045em;font-weight:700}
-.hero h1 em{font-style:normal;color:var(--yellow)}
-.hero p{margin:18px auto 0;max-width:54ch;color:var(--mut);font-size:clamp(15px,1.5vw,18px)}
-.hero .btns{margin-top:22px;display:flex;gap:10px;justify-content:center;pointer-events:auto}
-.cue{position:absolute;left:0;right:0;bottom:36px;text-align:center;font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
-.cue span{display:inline-block;padding-bottom:4px;background:linear-gradient(var(--yellow),var(--yellow)) 0 100%/var(--u,100%) 1px no-repeat}
-.proc{position:absolute;left:var(--pad);bottom:28px;width:min(430px,calc(100% - 2*var(--pad)));list-style:none;opacity:0;will-change:transform,opacity}
-.proc li{display:grid;grid-template-columns:40px 1fr;align-items:start;color:var(--mut);padding:5px 0}
-.proc .n{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;font-size:12px;font-weight:700;transition:background .3s,color .3s}
-.proc .t{font-size:13px;font-weight:600;line-height:30px;transition:font-size .3s,color .3s}
-.proc .d{grid-column:2;display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s}
-.proc .d>div{overflow:hidden;border-left:1px solid rgba(255,255,255,.22);padding-left:0;transition:padding .45s}
-.proc .d p{font-size:14px;color:var(--mut);margin:6px 0 4px;line-height:1.5}
-.proc li.on .n{background:var(--yellow);color:#0b1830}
-.proc li.on .t{font-size:18px;color:#fff}
-.proc li.on .d{grid-template-rows:1fr}
-.proc li.on .d>div{padding-left:14px}
-.qcats{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
-.qcats .card{text-align:center;padding:24px 14px}
-.qcats .ico{margin:0 auto 14px}
-.qcats h3{font-size:16px}
-@media(max-width:900px){
-  .hero{top:84px}
-  .hero h1{font-size:clamp(36px,11vw,48px)}
-  .track{height:360vh}
-  .qcats{grid-template-columns:repeat(2,1fr)}
-  .hero .btns .ghost{display:none}
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+<link rel="stylesheet" href="assets/css/styles.css?v=94672299">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","name":"Himanshu Electronics","telephone":"+91-9639228237","description":"Wholesale electrical appliances: fans, wires, lighting, irons, home appliances and repaired TVs."}</script>
 </head>
 <body>
-<div class="loader" id="loader" aria-hidden="true"><svg viewBox="0 0 48 48"><g fill="#3fd8ff"><rect x="21" y="2" width="6" height="6"/><rect x="38" y="11" width="6" height="6"/><rect x="38" y="31" width="6" height="6"/><rect x="21" y="40" width="6" height="6"/><rect x="4" y="31" width="6" height="6"/><rect x="4" y="11" width="6" height="6"/></g><path d="M20 18l8 6-8 6" stroke="#ffc20e" stroke-width="4" fill="none"/></svg></div>
-<header class="hdr">
-<a class="logo" href="index.html" aria-label="Himanshu Electronics home"><svg viewBox="0 0 32 32"><path d="M18 2L6 18h8l-2 12 14-17h-8z" fill="#ffc20e"/></svg><span><b>HIMANSHU</b><small>ELECTRONICS</small></span></a>
-<nav class="nav" id="nav" aria-label="Main"><a href="index.html" class="on">Home</a><a href="products.html">Products</a><a href="brands.html">Brands</a><a href="wholesale.html">Wholesale</a><a href="tv-repair.html">TV Repair</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
-<div class="hdr-cta"><a class="pill ghost" href="contact.html">Visit us</a><a class="pill" href="tel:+919639228237">Call now</a><button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><i></i></button></div>
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+<symbol id="i-fan" viewBox="0 0 200 200"><circle cx="100" cy="100" r="92" fill="#eef3fb" stroke="#0b2147" stroke-width="5"/><circle cx="100" cy="100" r="70" fill="none" stroke="#8fb0e0" stroke-width="3"/><g fill="#1d4685" stroke="#0b2147" stroke-width="3"><ellipse cx="100" cy="58" rx="19" ry="38"/><ellipse cx="100" cy="58" rx="19" ry="38" transform="rotate(120 100 100)"/><ellipse cx="100" cy="58" rx="19" ry="38" transform="rotate(240 100 100)"/></g><circle cx="100" cy="100" r="16" fill="#ffc107" stroke="#0b2147" stroke-width="4"/></symbol>
+<symbol id="i-bulb" viewBox="0 0 200 200"><path d="M100 14c-36 0-62 26-62 60 0 22 11 36 22 49 7 8 10 15 10 26h60c0-11 3-18 10-26 11-13 22-27 22-49 0-34-26-60-62-60z" fill="#fff1b8" stroke="#0b2147" stroke-width="5" stroke-linejoin="round"/><path d="M82 160h36v10a8 8 0 0 1-8 8H90a8 8 0 0 1-8-8z" fill="#8fb0e0" stroke="#0b2147" stroke-width="5" stroke-linejoin="round"/><path d="M84 149h32" stroke="#0b2147" stroke-width="5"/><path d="M86 128V96l14 14 14-14v32" fill="none" stroke="#f0a800" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-wire" viewBox="0 0 200 200"><circle cx="96" cy="96" r="80" fill="#ffc107" stroke="#0b2147" stroke-width="5"/><circle cx="96" cy="96" r="64" fill="none" stroke="#0b2147" stroke-width="3" opacity=".5"/><circle cx="96" cy="96" r="50" fill="none" stroke="#0b2147" stroke-width="3" opacity=".5"/><circle cx="96" cy="96" r="36" fill="#1d4685" stroke="#0b2147" stroke-width="5"/><circle cx="96" cy="96" r="13" fill="#eef3fb" stroke="#0b2147" stroke-width="4"/><path d="M150 150c14 20 22 12 40 22" fill="none" stroke="#0b2147" stroke-width="12" stroke-linecap="round"/><path d="M150 150c14 20 22 12 40 22" fill="none" stroke="#ffc107" stroke-width="7" stroke-linecap="round"/></symbol>
+<symbol id="i-iron" viewBox="0 0 200 200"><path d="M18 142h164c0-38-30-66-70-66H70c-30 0-52 18-52 66z" fill="#8fb0e0" stroke="#0b2147" stroke-width="5" stroke-linejoin="round"/><path d="M62 76c0-28 24-44 46-44 20 0 34 14 34 44" fill="none" stroke="#0b2147" stroke-width="5" stroke-linecap="round"/><path d="M18 142h164v14a8 8 0 0 1-8 8H26a8 8 0 0 1-8-8z" fill="#eef3fb" stroke="#0b2147" stroke-width="5" stroke-linejoin="round"/><circle cx="112" cy="112" r="8" fill="#ffc107" stroke="#0b2147" stroke-width="4"/></symbol>
+<symbol id="i-kettle" viewBox="0 0 200 200"><path d="M48 96L18 66" stroke="#0b2147" stroke-width="10" stroke-linecap="round"/><path d="M150 88c36 0 36 62 0 68" fill="none" stroke="#0b2147" stroke-width="10" stroke-linecap="round"/><path d="M52 70h88l12 96a10 10 0 0 1-10 12H50a10 10 0 0 1-10-12z" fill="#eef3fb" stroke="#0b2147" stroke-width="5" stroke-linejoin="round"/><path d="M58 70c0-18 14-28 38-28s38 10 38 28z" fill="#1d4685" stroke="#0b2147" stroke-width="5" stroke-linejoin="round"/><rect x="44" y="148" width="104" height="14" fill="#ffc107"/><circle cx="96" cy="34" r="6" fill="#ffc107" stroke="#0b2147" stroke-width="3"/></symbol>
+<symbol id="i-tv" viewBox="0 0 200 200"><rect x="14" y="38" width="172" height="112" rx="12" fill="#12305f" stroke="#0b2147" stroke-width="5"/><rect x="24" y="48" width="152" height="92" rx="6" fill="#1d4685"/><path d="M24 120l40-34 34 30 28-22 50 36v10H24z" fill="#ffc107"/><circle cx="140" cy="72" r="10" fill="#fff1b8"/><path d="M70 176h60M100 150v26" stroke="#0b2147" stroke-width="8" stroke-linecap="round"/></symbol>
+<symbol id="i-box" viewBox="0 0 200 200"><path d="M100 26l76 36v76l-76 36-76-36V62z" fill="#ffc107" stroke="#0b2147" stroke-width="5" stroke-linejoin="round"/><path d="M24 62l76 36 76-36M100 98v76" fill="none" stroke="#0b2147" stroke-width="5" stroke-linejoin="round"/><path d="M62 44l76 36v28l-20 9V90z" fill="#fff1b8" stroke="#0b2147" stroke-width="4" stroke-linejoin="round" opacity=".9"/></symbol>
+<symbol id="s-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="s-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="s-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16.5 16.5L21 21" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="s-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="s-wa" viewBox="0 0 24 24"><path d="M3 21l1.65-4.8A9 9 0 1 1 8 19.4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1.3-1.6-2.3-1.2-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1.2-2.3z" fill="currentColor"/></symbol>
+</svg>
+<div class="wire" aria-hidden="true"><svg class="wire__svg" viewBox="0 0 1000 1000" preserveAspectRatio="none" focusable="false"><path class="wp" d="M40 0V300L90 350V650L40 700V1000" pathLength="1000"/><path class="wp" d="M960 0V200L910 250V600L960 650V1000" pathLength="1000"/><path class="wp" d="M0 120H200L240 160H420" pathLength="1000"/><path class="wp" d="M1000 800H760L720 760H560" pathLength="1000"/><path class="wp" d="M0 880H140L180 840H340" pathLength="1000"/><path class="wp" d="M1000 420H800L770 450H640" pathLength="1000"/><path class="wp" d="M240 160V400L280 440H520" pathLength="1000"/><path class="wp" d="M760 760V560L720 520H500" pathLength="1000"/><path class="wg" d="M40 0V300L90 350V650L40 700V1000" pathLength="1000"/><path class="wg" d="M960 0V200L910 250V600L960 650V1000" pathLength="1000"/><path class="wg" d="M0 120H200L240 160H420" pathLength="1000"/><path class="wg" d="M1000 800H760L720 760H560" pathLength="1000"/><path class="wg" d="M0 880H140L180 840H340" pathLength="1000"/><path class="wg" d="M1000 420H800L770 450H640" pathLength="1000"/><path class="wg" d="M240 160V400L280 440H520" pathLength="1000"/><path class="wg" d="M760 760V560L720 520H500" pathLength="1000"/></svg></div>
+<header class="header" id="top">
+<div class="header__top wrap">
+<button class="header__burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false"><svg class="ico burger__menu"><use href="#s-menu"/></svg><svg class="ico burger__close"><use href="#s-close"/></svg></button>
+<a class="logo" href="index.html" aria-label="Himanshu Electronics home"><svg class="logo__bolt" viewBox="0 0 32 40" aria-hidden="true"><path d="M20 0L2 23h11l-4 17 21-26H18z" fill="#ffc107"/></svg><span class="logo__text"><span class="logo__name">Himanshu<b>Electronics</b></span><span class="logo__tag">Wholesale electricals</span></span></a>
+<form class="search" action="search.html" method="get" role="search"><svg class="ico search__icon" aria-hidden="true"><use href="#s-search"/></svg><input class="search__input" type="search" name="q" placeholder="Search fans, wires, bulbs and more..." aria-label="Search products"><button class="search__btn" type="submit" aria-label="Search"><svg class="ico" aria-hidden="true"><use href="#s-search"/></svg></button></form>
+<div class="header__actions"><a class="action" href="tel:+919639228237" aria-label="Call us"><svg class="ico" aria-hidden="true"><use href="#s-phone"/></svg><span>Call</span></a><a class="action action--wa" href="https://wa.me/919639228237" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="ico" aria-hidden="true"><use href="#s-wa"/></svg><span>WhatsApp</span></a></div>
+</div>
+<div class="header__navrow"><div class="wrap navrow">
+<div class="allcat" id="allcat"><button class="allcat__btn" id="allcatBtn" type="button" aria-expanded="false"><i class="ri-menu-line"></i>All Categories</button><div class="allcat__menu" id="allcatMenu"><a class="allcat__link" href="products.html?cat=wires"><svg aria-hidden="true"><use href="#i-wire"/></svg>Wires & Cables</a><a class="allcat__link" href="products.html?cat=fans"><svg aria-hidden="true"><use href="#i-fan"/></svg>Fans</a><a class="allcat__link" href="products.html?cat=lighting"><svg aria-hidden="true"><use href="#i-bulb"/></svg>Lighting & Bulbs</a><a class="allcat__link" href="products.html?cat=irons"><svg aria-hidden="true"><use href="#i-iron"/></svg>Irons</a><a class="allcat__link" href="products.html?cat=appliances"><svg aria-hidden="true"><use href="#i-kettle"/></svg>Home Appliances</a><a class="allcat__link" href="products.html?cat=tv"><svg aria-hidden="true"><use href="#i-tv"/></svg>Repaired TVs</a></div></div>
+<nav class="nav" aria-label="Main"><a class="nav__link nav__link--active" href="index.html">Home</a><a class="nav__link" href="products.html">Products</a><a class="nav__link" href="brands.html">Brands</a><a class="nav__link" href="wholesale.html">Wholesale</a><a class="nav__link" href="repair.html">Book Home Service</a><a class="nav__link" href="about.html">About</a><a class="nav__link" href="contact.html">Contact</a><div class="nav__more" id="navMore"><button id="navMoreBtn" type="button" aria-expanded="false">More <i class="ri-arrow-down-s-line"></i></button><div class="nav__drop"><a href="gallery.html">Gallery</a><a href="delivery.html">Delivery</a><a href="faq.html">FAQ</a><a href="returns.html">Returns</a></div></div></nav>
+</div></div>
 </header>
-<main style="padding-top:0">
-<section class="track" id="track">
-  <div class="stage">
-    <video id="v" muted playsinline webkit-playsinline preload="auto" disablepictureinpicture poster="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/33150b94-09f7-47da-a7c9-3ae76c2dd7eb.jpg"></video>
-    <div class="shade"></div>
-    <div class="hero" id="hero"><div class="hero-in" id="heroIn">
-      <h1>Power for every<br><em>shop and home</em></h1>
-      <p>Wholesale fans, wires, lighting, appliances and repaired TVs. Trusted brands including Orient, Fybros and Havells, at dealer rates.</p>
-      <div class="btns"><a class="pill" href="tel:+919639228237">Call 9639228237</a><a class="pill ghost" href="products.html">See products</a></div>
-    </div></div>
-    <div class="cue" id="cue"><span id="cueU">Scroll to see how we work</span></div>
-    <ol class="proc" id="proc">
-      <li class="on"><span class="n">01</span><span class="t">Tell us what you need</span><div class="d"><div><p>Call or visit with your list: fans, wires, lights, appliances. We note the brands and quantities you want.</p></div></div></li>
-      <li><span class="n">02</span><span class="t">We match the products</span><div class="d"><div><p>From our range of trusted brands we pick what fits your shop, project or home, and quote you a wholesale rate.</p></div></div></li>
-      <li><span class="n">03</span><span class="t">Confirm your order</span><div class="d"><div><p>Agree the rate and quantity with us directly. No middle layers, just a clear deal with the shop owner.</p></div></div></li>
-      <li><span class="n">04</span><span class="t">Collect or get it sent</span><div class="d"><div><p>Pick up from the shop, or ask us about sending your order. Between 9:30 AM and 9:00 PM we are here to help.</p></div></div></li>
-    </ol>
-  </div>
-</section>
+<main>
+<section class="hero" aria-label="Featured"><div class="hero__slides"><div class="hero__slide hero__slide--active" aria-hidden="false"><div class="hero__shape"></div><div class="wrap hero__inner">
+<div><p class="hero__eyebrow">Wholesale prices. Trusted brands.</p><h1 class="hero__title">Power Up<em>Every Space</em></h1>
+<ul class="hero__list"><li>Top brands</li><li>Genuine products</li><li>Dealer rates</li></ul>
+<a class="btn" href="products.html">View Products <i class="ri-arrow-right-line"></i></a></div>
+<div class="hero__art"><p class="hero__script">Right brands, <br>right price</p><svg viewBox="0 0 560 330" role="img" aria-label="Electrical products illustration"><use href="#i-fan" x="10" y="50" width="250" height="250"/><use href="#i-bulb" x="270" y="0" width="160" height="160"/><use href="#i-wire" x="300" y="150" width="170" height="170"/><use href="#i-iron" x="440" y="190" width="110" height="110"/></svg></div></div></div><div class="hero__slide" aria-hidden="true"><div class="hero__shape"></div><div class="wrap hero__inner">
+<div><p class="hero__eyebrow">Fans for every room</p><h1 class="hero__title">Stay Cool<em>All Year Round</em></h1>
+<ul class="hero__list"><li>Ceiling</li><li>Table</li><li>Wall</li><li>Pedestal</li><li>Exhaust</li></ul>
+<a class="btn" href="products.html">View Products <i class="ri-arrow-right-line"></i></a></div>
+<div class="hero__art"><p class="hero__script">Cool comfort, <br>fair rates</p><svg viewBox="0 0 560 330" role="img" aria-label="Electrical products illustration"><use href="#i-fan" x="130" y="20" width="300" height="300"/><use href="#i-fan" x="0" y="170" width="140" height="140"/><use href="#i-fan" x="430" y="180" width="120" height="120"/></svg></div></div></div><div class="hero__slide" aria-hidden="true"><div class="hero__shape"></div><div class="wrap hero__inner">
+<div><p class="hero__eyebrow">Repaired TVs</p><h1 class="hero__title">Good TVs<em>Fair Prices</em></h1>
+<ul class="hero__list"><li>Tested</li><li>Repaired</li><li>Ready to use</li></ul>
+<a class="btn" href="products.html">View Products <i class="ri-arrow-right-line"></i></a></div>
+<div class="hero__art"><p class="hero__script">Good TVs, <br>fair prices</p><svg viewBox="0 0 560 330" role="img" aria-label="Electrical products illustration"><use href="#i-tv" x="90" y="0" width="340" height="340"/><use href="#i-tv" x="400" y="160" width="150" height="150"/></svg></div></div></div></div>
+<div class="hero__dots"><button class="hero__dot hero__dot--active" type="button" aria-label="Slide 1"></button><button class="hero__dot" type="button" aria-label="Slide 2"></button><button class="hero__dot" type="button" aria-label="Slide 3"></button></div></section>
+<section class="updates" id="updates" hidden></section>
+<section class="cats"><div class="wrap cats__list" id="homecats"><a class="cats__item" href="products.html?cat=wires"><span class="cats__icon"><svg aria-hidden="true"><use href="#i-wire"/></svg></span><span class="cats__name">Wires & Cables</span><span class="cats__sub">Home &amp; contractor</span></a><a class="cats__item" href="products.html?cat=fans"><span class="cats__icon"><svg aria-hidden="true"><use href="#i-fan"/></svg></span><span class="cats__name">Fans</span><span class="cats__sub">All sizes</span></a><a class="cats__item" href="products.html?cat=lighting"><span class="cats__icon"><svg aria-hidden="true"><use href="#i-bulb"/></svg></span><span class="cats__name">Lighting & Bulbs</span><span class="cats__sub">LED &amp; more</span></a><a class="cats__item" href="products.html?cat=irons"><span class="cats__icon"><svg aria-hidden="true"><use href="#i-iron"/></svg></span><span class="cats__name">Irons</span><span class="cats__sub">Everyday use</span></a><a class="cats__item" href="products.html?cat=appliances"><span class="cats__icon"><svg aria-hidden="true"><use href="#i-kettle"/></svg></span><span class="cats__name">Home Appliances</span><span class="cats__sub">For every home</span></a><a class="cats__item" href="products.html?cat=tv"><span class="cats__icon"><svg aria-hidden="true"><use href="#i-tv"/></svg></span><span class="cats__name">Repaired TVs</span><span class="cats__sub">Tested &amp; ready</span></a><a class="cats__item" href="wholesale.html"><span class="cats__icon"><svg aria-hidden="true"><use href="#i-box"/></svg></span><span class="cats__name">Bulk Orders</span><span class="cats__sub">Dealer rates</span></a></div></section>
+<section class="section"><div class="wrap">
+<div class="section__head"><h2 class="section__title">Popular Products</h2><a class="section__link" href="products.html">View All <i class="ri-arrow-right-line"></i></a></div>
+<div class="pscroll" id="popular"></div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap promos">
+<div class="promo promo--yellow reveal"><div class="promo__text"><p class="promo__title">Wires &amp;<br>Cables</p><p class="promo__sub">For every wiring job</p><a class="promo__btn" href="products.html?cat=wires">Browse <i class="ri-arrow-right-line"></i></a></div><svg aria-hidden="true"><use href="#i-wire"/></svg></div>
+<div class="promo promo--light reveal"><div class="promo__text"><p class="promo__title">Fans for<br>every room</p><p class="promo__sub">Ceiling, table, wall &amp; more</p><a class="promo__btn" href="products.html?cat=fans">Browse <i class="ri-arrow-right-line"></i></a></div><svg aria-hidden="true"><use href="#i-fan"/></svg></div>
+<div class="promo promo--dark reveal"><div class="promo__text"><p class="promo__title">Repaired TVs</p><p class="promo__sub">Tested and ready to use</p><a class="promo__btn" href="products.html?cat=tv">See more <i class="ri-arrow-right-line"></i></a></div><svg aria-hidden="true"><use href="#i-tv"/></svg></div>
+</div></section>
+<section class="section section--alt"><div class="wrap">
+<div class="section__head"><h2 class="section__title">Brands we stock</h2><a class="section__link" href="brands.html">All brands <i class="ri-arrow-right-line"></i></a></div>
+<div class="showcase" id="homebrands"><a class="bcard" href="brands.html"><span class="bcard__name">Orient</span></a><a class="bcard" href="brands.html"><span class="bcard__name">Fybros</span></a><a class="bcard" href="brands.html"><span class="bcard__name">Havells</span></a></div>
+</div></section>
+<section class="section"><div class="wrap grid grid--2" style="gap:40px;align-items:center">
+<div><p class="eyebrow">Why Himanshu Electronics</p><h2 class="section__title" style="margin-bottom:6px">Built for dealers, contractors and homes</h2>
+<ul class="ticks"><li>Wholesale rates for shops, electricians and contractors</li><li>Wires, fans, lighting, irons and appliances under one roof</li><li>Brands your customers already trust</li><li>Repaired TVs available</li><li>Open every day, 9:30 AM to 9:00 PM</li></ul></div>
+<div class="card"><p class="eyebrow">Wholesale enquiry</p><h3 style="font-size:26px">Need a rate list?</h3><p style="margin-bottom:20px">Tell us what you buy and how much. We will call back with our best wholesale rates.</p><div class="band__btns"><a class="btn" href="wholesale.html">Wholesale &amp; dealers</a><a class="btn btn--ghost" href="contact.html">Contact us</a></div></div>
+</div></section>
 
-<section class="sec">
-  <div class="wrap">
-    <p class="eyebrow">What we sell</p>
-    <h2>Everything an electrical shop needs</h2>
-    <p class="lead" style="margin-bottom:34px">One counter for the full range. Tap a category to see more.</p>
-    <div class="qcats">
-      <a class="card reveal" href="products.html#wires"><div class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="#ffc20e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="11"/><circle cx="16" cy="16" r="6"/><circle cx="16" cy="16" r="1.5" fill="#ffc20e"/><path d="M27 16h3"/></svg></div><h3>Wires &amp; Cables</h3></a>
-      <a class="card reveal" href="products.html#fans"><div class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="#ffc20e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="2.5" fill="#ffc20e"/><path d="M16 13.5C13 6 17 3 19 5c2 2-1 6-3 8.5zM18.2 17.2c7.5 1 8.5 5.5 6 6.8-2.5 1.3-5.7-2-6-6.8zM13.6 18.2c-5 4-9 1.5-8.2-1.2.8-2.7 5.4-1.8 8.2 1.2z"/></svg></div><h3>Fans</h3></a>
-      <a class="card reveal" href="products.html#lighting"><div class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="#ffc20e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4c-5 0-8.5 3.6-8.5 8 0 3 1.5 4.7 3 6.4 1 1.1 1.3 2.1 1.3 3.6h8.4c0-1.5.3-2.500 1.3-3.600 1.5-1.700 3-3.400 3-6.400 0-4.400-3.500-8-8.500-8z"/><path d="M12 26h8M13.500 29h5"/></svg></div><h3>Lighting</h3></a>
-      <a class="card reveal" href="products.html#appliances"><div class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="#ffc20e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 23h24c0-6-4-10-10-10h-5c-4 0-9 2-9 10z"/><path d="M11 13c0-4 3.500-6 6.500-6S22 9 22 13"/><path d="M5 27h22"/></svg></div><h3>Home Appliances</h3></a>
-      <a class="card reveal" href="tv-repair.html"><div class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="#ffc20e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="26" height="17" rx="2.500"/><path d="M11 28h10M16 23v5"/></svg></div><h3>Repaired TVs</h3></a>
-    </div>
-  </div>
-</section>
-
-<section class="sec alt">
-  <div class="wrap">
-    <p class="eyebrow">Brands</p>
-    <h2>Brands your customers ask for</h2>
-    <div class="brands" style="margin-top:26px">
-      <div class="brand reveal">Orient</div><div class="brand reveal">Fybros</div><div class="brand reveal">Havells</div><div class="brand more-b reveal">+ more brands in store</div>
-    </div>
-    <a class="more" href="brands.html">View all brands →</a>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="wrap g2 grid" style="align-items:center;gap:44px">
-    <div>
-      <p class="eyebrow">Why Himanshu Electronics</p>
-      <h2>Built for dealers, contractors and homes</h2>
-      <ul class="tick">
-        <li>Wholesale rates for shops, electricians and contractors</li>
-        <li>Wide range under one roof, from wires to fans to appliances</li>
-        <li>Well-known brands you and your customers trust</li>
-        <li>Repaired TVs available</li>
-        <li>Open every day, 9:30 AM to 9:00 PM</li>
-      </ul>
-    </div>
-    <div class="card" style="padding:34px">
-      <p class="eyebrow">Wholesale enquiry</p>
-      <h3 style="font-size:26px;margin-bottom:12px">Need a rate list?</h3>
-      <p style="margin:0 0 20px">Tell us what you buy and in what quantity. We will call back with our best wholesale rates.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:10px"><a class="pill" href="wholesale.html">Wholesale &amp; dealers</a><a class="pill ghost" href="contact.html">Contact us</a></div>
-    </div>
-  </div>
-</section>
-
-<section class="sec" style="padding-top:0">
-  <div class="wrap"><div class="band">
-    <div><h2>Visit or call Himanshu Electronics</h2><p>Open daily 9:30 AM to 9:00 PM · 9639228237</p></div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="pill" href="tel:+919639228237">Call now</a><a class="pill ghost" href="contact.html">Get directions</a></div>
-  </div></div>
-</section>
 </main>
-<footer class="ftr">
-<div class="wrap fgrid">
-<div><a class="logo" href="index.html"><svg viewBox="0 0 32 32"><path d="M18 2L6 18h8l-2 12 14-17h-8z" fill="#ffc20e"/></svg><span><b>HIMANSHU</b><small>ELECTRONICS</small></span></a>
-<p style="margin-top:16px;max-width:34ch">Wholesale electrical appliances: fans, wires, lighting, home appliances and repaired TVs.</p></div>
-<div><h4>Explore</h4><a href="products.html">Products</a><a href="brands.html">Brands</a><a href="wholesale.html">Wholesale &amp; dealers</a><a href="tv-repair.html">Repaired TVs</a></div>
-<div><h4>Company</h4><a href="about.html">About us</a><a href="contact.html">Contact</a><a href="faq.html">FAQ</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+<footer class="footer"><div class="wrap">
+<div class="footer__grid">
+<div><a class="logo" href="index.html"><svg class="logo__bolt" viewBox="0 0 32 40" aria-hidden="true"><path d="M20 0L2 23h11l-4 17 21-26H18z" fill="#ffc107"/></svg><span class="logo__text"><span class="logo__name">Himanshu<b>Electronics</b></span><span class="logo__tag">Wholesale electricals</span></span></a><p class="footer__about">Wholesale fans, wires, lighting, irons, home appliances and repaired TVs.</p></div>
+<div><h4>Shop</h4><a href="products.html">Products</a><a href="brands.html">Brands</a><a href="wholesale.html">Wholesale &amp; dealers</a><a href="repair.html">Book home service</a></div>
+<div><h4>Help</h4><a href="about.html">About us</a><a href="contact.html">Contact</a><a href="delivery.html">Delivery</a><a href="returns.html">Returns</a><a href="faq.html">FAQ</a></div>
 <div><h4>Visit &amp; call</h4><p>Himanshu Electronics<br>Address coming soon</p><a href="tel:+919639228237">9639228237</a><p>Open daily, 9:30 AM to 9:00 PM</p></div>
 </div>
-<div class="wrap fbot"><span>&copy; 2026 Himanshu Electronics. All rights reserved.</span><span>Prices and availability on request.</span></div>
-</footer>
-<div class="fab"><a class="c" href="tel:+919639228237">Call</a><a class="w" href="https://wa.me/919639228237?text=Hello%20Himanshu%20Electronics" target="_blank" rel="noopener">WhatsApp</a></div>
-<script src="site.js"></script>
-<script>
-(function(){
-  var v=document.getElementById('v'),track=document.getElementById('track'),
-      heroIn=document.getElementById('heroIn'),proc=document.getElementById('proc'),
-      cue=document.getElementById('cue'),cueU=document.getElementById('cueU'),
-      loader=document.getElementById('loader'),rows=proc.querySelectorAll('li');
-  var DESK='https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/65fdef53-5686-4659-8761-52d61bf1a4f7.mp4',
-      MOB='https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/9a30e5e9-9f03-4755-9bc1-7bcf1510aab3.mp4';
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var dur=5.04,cur=0,target=0,p=0,active=-1,hidden=false;
-  function clamp(n,a,b){return Math.max(a,Math.min(b,n))}
-  function range(x,a,b){return clamp((x-a)/(b-a),0,1)}
-  function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2}
-  function hide(){if(hidden)return;hidden=true;loader.classList.add('done')}
-  v.addEventListener('loadedmetadata',function(){if(isFinite(v.duration)&&v.duration>0)dur=v.duration;v.pause()});
-  v.addEventListener('loadeddata',function(){setTimeout(hide,350)});
-  v.addEventListener('error',hide);
-  setTimeout(hide,3500);
-  v.src=window.innerWidth<=900?MOB:DESK;v.load();
-  var un=function(){var pr=v.play();if(pr&&pr.then)pr.then(function(){v.pause()}).catch(function(){});else v.pause()};
-  ['touchstart','pointerdown','wheel','keydown'].forEach(function(e){addEventListener(e,un,{once:true,passive:true})});
-  function progress(){var r=track.getBoundingClientRect();return clamp(-r.top/Math.max(1,r.height-innerHeight),0,1)}
-  function ui(){
-    var h=ease(range(p,0,.38));
-    heroIn.style.transform='translateY('+(-34*h)+'vh) rotateX('+(62*h)+'deg) scale('+(1-.12*h)+')';
-    heroIn.style.opacity=1-range(p,.10,.24);
-    var pr=range(p,.08,.24);
-    proc.style.opacity=pr;proc.style.transform='translateY('+(40*(1-pr))+'px)';
-    cue.style.opacity=1-range(p,.04,.12);
-    cueU.style.setProperty('--u',(100*(1-range(p,0,.1)))+'%');
-    var i=p<.3?0:p<.55?1:p<.8?2:3;
-    if(i!==active){active=i;for(var k=0;k<rows.length;k++)rows[k].classList.toggle('on',k===i)}
-  }
-  function frame(){
-    p=progress();
-    target=p*(dur-1/48);
-    cur=reduce?target:cur+(target-cur)*.2;
-    if(v.readyState>=2&&!v.seeking&&Math.abs(v.currentTime-cur)>1/60){try{v.currentTime=cur}catch(e){}}
-    ui();
-    requestAnimationFrame(frame);
-  }
-  requestAnimationFrame(frame);
-})();
-</script>
+<div class="footer__bottom"><span>&copy; 2026 Himanshu Electronics. All rights reserved.</span><span><a style="display:inline;margin:0 10px 0 0" href="privacy.html">Privacy</a><a style="display:inline;margin:0" href="terms.html">Terms</a></span></div>
+</div></footer>
+<div class="fab"><a class="fab__call" href="tel:+919639228237"><svg class="ico" aria-hidden="true"><use href="#s-phone"/></svg>Call</a><a class="fab__wa" href="https://wa.me/919639228237" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#s-wa"/></svg>WhatsApp</a></div>
+<script src="assets/js/site.js?v=94672299"></script>
+<script src="assets/js/enquiry.js?v=94672299"></script>
 </body>
 </html>
