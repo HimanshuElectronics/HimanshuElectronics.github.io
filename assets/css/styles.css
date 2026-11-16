@@ -568,3 +568,27 @@ html{touch-action:pan-x pan-y}
 .quick button:hover{border-color:var(--yellow)}
 .ferr{color:#ff9b9b;font-size:12px;text-transform:none;letter-spacing:0}
 @media(max-width:900px){.pdetail{grid-template-columns:minmax(0,1fr)}.wphoto{max-width:340px}}
+
+/* ---------- menu icons + Products categories dropdown ---------- */
+.nav__link{display:inline-flex;align-items:center;gap:7px}
+.nav__link>i{font-size:18px;color:var(--yellow)}
+.nav__caret{transition:transform .2s;font-size:18px!important;margin-left:-2px}
+.nav__item--sub.is-open .nav__caret{transform:rotate(180deg)}
+.nav__item--sub{position:relative}
+.nav__sub{position:absolute;left:0;top:48px;min-width:250px;background:#fff;color:var(--ink);border-radius:12px;padding:8px;box-shadow:0 18px 50px rgba(0,0,0,.4);display:none;z-index:5}
+.nav__item--sub.is-open .nav__sub{display:block}
+.nav__sublink{display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:8px;font-weight:500;font-size:14px}
+.nav__sublink:hover{background:var(--cream)}
+.nav__sublink svg{width:28px;height:28px;flex-shrink:0}
+.nav__more>button i:first-child{color:var(--yellow)}
+.nav__drop a{display:flex!important;align-items:center;gap:10px}
+.nav__drop a i{color:#c98a00;font-size:18px}
+@media(max-width:900px){
+  .nav__link{display:flex;width:100%}
+  .nav__item--sub{width:100%}
+  .nav__caret{margin-left:auto}
+  .nav__sub{position:static;box-shadow:none;background:rgba(255,255,255,.05);color:#fff;padding:4px 4px 4px 22px;margin:0 0 6px;border-radius:10px}
+  .nav__sublink:hover{background:rgba(255,255,255,.08)}
+  .nav__drop a i{color:var(--yellow)}
+  .nav__drop a{padding:13px 12px}
+}

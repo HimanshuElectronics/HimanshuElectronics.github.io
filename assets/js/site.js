@@ -32,7 +32,15 @@
       if (!wrap.contains(e.target)) { wrap.classList.remove('is-open'); btn.setAttribute('aria-expanded', 'false'); }
     });
   }
-  toggler('#allcat', '#allcatBtn');
+  /* Products menu: first tap opens the categories, tapping again opens the products page */
+  var np = $('#navProducts');
+  if (np) {
+    var npl = $('.nav__link', np);
+    npl.addEventListener('click', function (e) {
+      if (!np.classList.contains('is-open')) { e.preventDefault(); np.classList.add('is-open'); npl.setAttribute('aria-expanded', 'true'); }
+    });
+    document.addEventListener('click', function (e) { if (!np.contains(e.target)) { np.classList.remove('is-open'); npl.setAttribute('aria-expanded', 'false'); } });
+  }
   toggler('#navMore', '#navMoreBtn');
 
   /* ---------- reveal ---------- */
@@ -108,16 +116,16 @@
       var c = n[b.id] || 0;
       return '<article class="bcard bcard--big reveal">' + logo + '<h3 class="bcard__name">' + esc(b.name) + '</h3>' +
         (b.description ? '<p class="bcard__desc">' + esc(b.description) + '</p>' : '') +
-        '<p class="bcard__count">' + (c ? c + (c === 1 ? ' product' : ' products') : 'Ask us for products') + '</p>' +
+        '<p class="bcard__count">' + c + (c === 1 ? ' Product' : ' Products') + '</p>' +
         '<a class="btn btn--block" href="' + url + '">View products</a></article>';
     }).join('');
   }
 
-  var popular = $('#popular'), listRoot = $('#plist'), allcatMenu = $('#allcatMenu'), homecats = $('#homecats'), homeBrands = $('#homebrands'), brandList = $('#brandlist');
+  var popular = $('#popular'), listRoot = $('#plist'), allcatMenu = $('#navSub'), homecats = $('#homecats'), homeBrands = $('#homebrands'), brandList = $('#brandlist');
   if (popular || listRoot || allcatMenu || homeBrands || brandList) {
     Promise.all([getJSON('products'), getJSON('categories'), getJSON('brands')]).then(function (r) {
       var d = prep(r);
-      if (allcatMenu && d.categories.length) allcatMenu.innerHTML = d.categories.map(function (c) { return '<a class="allcat__link" href="products.html?cat=' + esc(c.slug) + '"><svg aria-hidden="true"><use href="#' + esc(c.icon || 'i-box') + '"/></svg>' + esc(c.name) + '</a>'; }).join('');
+      if (allcatMenu && d.categories.length) allcatMenu.innerHTML = d.categories.map(function (c) { return '<a class="nav__sublink" href="products.html?cat=' + esc(c.slug) + '"><svg aria-hidden="true"><use href="#' + esc(c.icon || 'i-box') + '"/></svg>' + esc(c.name) + '</a>'; }).join('');
       if (homecats && d.categories.length) homecats.innerHTML = d.categories.map(function (c) {
         return '<a class="cats__item" href="products.html?cat=' + esc(c.slug) + '"><span class="cats__icon"><svg aria-hidden="true"><use href="#' + esc(c.icon || 'i-box') + '"/></svg></span><span class="cats__name">' + esc(c.name) + '</span><span class="cats__sub">' + esc(c.sub || '') + '</span></a>';
       }).join('') + '<a class="cats__item" href="wholesale.html"><span class="cats__icon"><svg aria-hidden="true"><use href="#i-box"/></svg></span><span class="cats__name">Bulk Orders</span><span class="cats__sub">Dealer rates</span></a>';

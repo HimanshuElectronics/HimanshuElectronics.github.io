@@ -38,13 +38,5 @@
     "icon": "i-kettle",
     "sub": "For every home",
     "sortOrder": 5
-  },
-  {
-    "id": 6,
-    "name": "Repaired TVs",
-    "slug": "tv",
-    "icon": "i-tv",
-    "sub": "Tested & ready",
-    "sortOrder": 6
   }
 ]

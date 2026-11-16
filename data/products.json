@@ -194,33 +194,5 @@
     "featured": false,
     "sortOrder": 14,
     "status": "published"
-  },
-  {
-    "id": 15,
-    "name": "Repaired LED TV",
-    "slug": "repaired-led-tv",
-    "categoryId": 6,
-    "brandId": null,
-    "packagingInfo": null,
-    "description": "Tested and repaired LED televisions. Ask for sizes in stock.",
-    "images": [],
-    "price": null,
-    "featured": true,
-    "sortOrder": 15,
-    "status": "published"
-  },
-  {
-    "id": 16,
-    "name": "Repaired LCD TV",
-    "slug": "repaired-lcd-tv",
-    "categoryId": 6,
-    "brandId": null,
-    "packagingInfo": null,
-    "description": "Tested and repaired LCD televisions.",
-    "images": [],
-    "price": null,
-    "featured": false,
-    "sortOrder": 16,
-    "status": "published"
   }
 ]

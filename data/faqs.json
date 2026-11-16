@@ -3,7 +3,7 @@
     "id": 1,
     "category": "products",
     "question": "What does Himanshu Electronics sell?",
-    "answer": "Wires and cables, fans, lighting and bulbs, irons, home appliances and repaired TVs.",
+    "answer": "Wires and cables, fans, lighting and bulbs, irons and home appliances.",
     "isPopular": true,
     "isPublished": true,
     "sortOrder": 1
@@ -43,15 +43,6 @@
     "isPopular": false,
     "isPublished": true,
     "sortOrder": 5
-  },
-  {
-    "id": 6,
-    "category": "products",
-    "question": "Do you sell repaired TVs?",
-    "answer": "Yes. Models in stock change, so call or visit to see what is available.",
-    "isPopular": false,
-    "isPublished": true,
-    "sortOrder": 6
   },
   {
     "id": 7,

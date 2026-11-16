@@ -50,12 +50,14 @@
     if (em) em.addEventListener('click', function () { if (bad() || !site.email) return; location.href = 'mailto:' + site.email + '?subject=' + encodeURIComponent('Enquiry from ' + cf.elements.name.value) + '&body=' + encodeURIComponent(text()); });
     J('site').then(function (s) { if (s && s.email && em) em.hidden = false; });
     $$('[data-quick]').forEach(function (b) { b.addEventListener('click', function () { cf.elements.type.value = b.getAttribute('data-quick'); cf.scrollIntoView({ behavior: 'smooth', block: 'start' }); }); });
-    J('faqs').then(function (f) {
+  }
+
+  /* ---- FAQ preview (contact + brands) ---- */
+  if ($('#contactFaq')) J('faqs').then(function (f) {
       var list = (f || []).filter(function (x) { return x.isPublished !== false; }).sort(function (a, b) { return (b.isPopular ? 1 : 0) - (a.isPopular ? 1 : 0) || a.sortOrder - b.sortOrder; }).slice(0, 3);
       var h = $('#contactFaq'); if (h && list.length) h.innerHTML = list.map(function (x) { return '<details class="faq-item"><summary>' + esc(x.question) + '</summary><p>' + esc(x.answer) + '</p></details>'; }).join('');
       HE.refresh(document);
     });
-  }
 
   /* ---- FAQ page ---- */
   var fl = $('#faqList');
