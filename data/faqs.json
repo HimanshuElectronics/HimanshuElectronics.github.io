@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "category": "products",
+    "question": "What does Himanshu Electronics sell?",
+    "answer": "Wires and cables, fans, lighting and bulbs, irons, home appliances and repaired TVs.",
+    "isPopular": true,
+    "isPublished": true,
+    "sortOrder": 1
+  },
+  {
+    "id": 2,
+    "category": "bulk",
+    "question": "Do you sell at wholesale rates?",
+    "answer": "Yes. We are a wholesale business. Call or visit with your list and quantities for a rate.",
+    "isPopular": true,
+    "isPublished": true,
+    "sortOrder": 2
+  },
+  {
+    "id": 3,
+    "category": "products",
+    "question": "Which brands do you stock?",
+    "answer": "Brands include Orient, Fybros and Havells, with more in store. Ask us if you need a specific brand.",
+    "isPopular": true,
+    "isPublished": true,
+    "sortOrder": 3
+  },
+  {
+    "id": 4,
+    "category": "payments",
+    "question": "Why are prices not shown on the website?",
+    "answer": "Rates change with quantity and brand. Tap Get Price or call us for today's wholesale rate.",
+    "isPopular": false,
+    "isPublished": true,
+    "sortOrder": 4
+  },
+  {
+    "id": 5,
+    "category": "general",
+    "question": "What are your opening hours?",
+    "answer": "We are open every day from 9:30 AM to 9:00 PM.",
+    "isPopular": false,
+    "isPublished": true,
+    "sortOrder": 5
+  },
+  {
+    "id": 6,
+    "category": "products",
+    "question": "Do you sell repaired TVs?",
+    "answer": "Yes. Models in stock change, so call or visit to see what is available.",
+    "isPopular": false,
+    "isPublished": true,
+    "sortOrder": 6
+  },
+  {
+    "id": 7,
+    "category": "service",
+    "question": "How does home service work?",
+    "answer": "Open Book Home Service, pick an independent technician, choose a day and time, and send the request on WhatsApp. Then call the technician to confirm the visit. Technicians are independent professionals, not employees of the shop. Visit charges are agreed with the technician.",
+    "isPopular": true,
+    "isPublished": true,
+    "sortOrder": 7
+  },
+  {
+    "id": 8,
+    "category": "delivery",
+    "question": "Do you deliver?",
+    "answer": "Delivery depends on your area and order. Message us your location and we will tell you.",
+    "isPopular": false,
+    "isPublished": true,
+    "sortOrder": 8
+  },
+  {
+    "id": 9,
+    "category": "general",
+    "question": "How can I place an order?",
+    "answer": "Add products to your enquiry list and place the order on WhatsApp, call 9639228237, or visit the shop.",
+    "isPopular": false,
+    "isPublished": true,
+    "sortOrder": 9
+  }
+]

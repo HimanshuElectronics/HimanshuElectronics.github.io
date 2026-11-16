@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
-<link rel="stylesheet" href="assets/css/styles.css?v=94679027">
+<link rel="stylesheet" href="assets/css/styles.css?v=94807540">
 </head>
 <body>
 <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -42,17 +42,17 @@
 </div></div>
 </header>
 <main>
-<section class="pagehero"><div class="wrap pagehero__inner"><p class="eyebrow">Home service</p><h1>Book my slot</h1><p>Choose a worker, pick a day and time, and we come to your home.</p></div></section>
+<section class="pagehero"><div class="wrap pagehero__inner"><p class="eyebrow">Home service</p><h1>Book a technician</h1><p>Choose an independent technician, pick a day and time, and send the request on WhatsApp.</p></div></section>
 <section class="section"><div class="wrap">
-<div class="section__head"><h2 class="section__title">1. Choose your worker</h2></div>
-<div class="chips" id="wchips" style="margin-bottom:22px"><button type="button" class="chip chip--on" data-svc="">All workers</button><button type="button" class="chip" data-svc="Fan repair">Fan repair</button><button type="button" class="chip" data-svc="Iron repair">Iron repair</button><button type="button" class="chip" data-svc="LED / TV repair">LED / TV repair</button><button type="button" class="chip" data-svc="Cooler repair">Cooler repair</button><button type="button" class="chip" data-svc="Wiring &amp; fitting">Wiring &amp; fitting</button></div>
-<div class="wgrid" id="workers"><div class="empty">Loading workers...</div></div>
+<div class="section__head"><h2 class="section__title">1. Choose your technician</h2></div>
+<div class="chips" id="wchips" style="margin-bottom:22px"><button type="button" class="chip chip--on" data-svc="">All technicians</button><button type="button" class="chip" data-svc="Fan repair">Fan repair</button><button type="button" class="chip" data-svc="Iron repair">Iron repair</button><button type="button" class="chip" data-svc="LED / TV repair">LED / TV repair</button><button type="button" class="chip" data-svc="Cooler repair">Cooler repair</button><button type="button" class="chip" data-svc="Wiring &amp; fitting">Wiring &amp; fitting</button></div>
+<div class="wgrid" id="workers"><div class="empty">Loading technicians...</div></div>
 </div></section>
 <section class="section" style="padding-top:0"><div class="wrap grid grid--2" style="gap:40px;align-items:start">
-<div><h2 class="section__title">2. Pick a slot</h2><p class="section__lead">Fill in the details and your booking request opens in WhatsApp, ready to send. The shop confirms your slot by call or message.</p>
-<ul class="ticks"><li>Fans, irons, LEDs, TVs, coolers and wiring</li><li>Worker comes to your home</li><li>Visit charges are confirmed by the shop</li></ul></div>
+<div><h2 class="section__title">2. Pick a slot</h2><p class="section__lead">Fill in the details and your request opens in WhatsApp with the message ready. You must press Send in WhatsApp. Then please call the technician to confirm the visit.</p>
+<ul class="ticks"><li>Fans, irons, LEDs, TVs, coolers and wiring</li><li>Technicians are independent professionals who take work through the shop</li><li>Tap a technician to see photo, area and mobile number</li><li>Visit charges are agreed with the technician</li></ul></div>
 <form class="card form" id="bookForm">
-<div class="picked" id="picked"><span>Selected worker</span><strong id="pickedName">Any available worker</strong><button type="button" id="pickedClear" hidden>Change</button></div>
+<div class="picked" id="picked"><span>Selected technician</span><strong id="pickedName">Any available technician</strong><button type="button" id="pickedClear" hidden>Change</button></div>
 <label>Service needed<select name="service"><option>Fan repair</option><option>Iron repair</option><option>LED / TV repair</option><option>Cooler repair</option><option>Wiring &amp; fitting</option><option>Other</option></select></label>
 <label>Preferred date<input name="date" type="date" required></label>
 <label>Time slot<select name="slot"><option>9:30 AM - 12:00 PM</option><option>12:00 PM - 3:00 PM</option><option>3:00 PM - 6:00 PM</option><option>6:00 PM - 8:30 PM</option></select></label>
@@ -60,7 +60,7 @@
 <label>Phone<input name="phone" type="tel" required autocomplete="tel"></label>
 <label>Home address<textarea name="address" rows="2" required></textarea></label>
 <label>What is the problem?<textarea name="msg" rows="3"></textarea></label>
-<button class="btn btn--block" type="submit"><svg class="ico" aria-hidden="true"><use href="#s-wa"/></svg> Book on WhatsApp</button></form>
+<button class="btn btn--block" type="submit"><svg class="ico" aria-hidden="true"><use href="#s-wa"/></svg> Book on WhatsApp</button><div class="done" id="bookDone" hidden></div></form>
 </div></section><section class="section" style="padding-top:0"><div class="wrap"><div class="band"><div><h2>Prefer to talk?</h2><p>Open daily 9:30 AM to 9:00 PM &middot; 9639228237</p></div><div class="band__btns"><a class="btn" href="tel:+919639228237"><svg class="ico" aria-hidden="true"><use href="#s-phone"/></svg> Call now</a><a class="btn btn--ghost" href="contact.html">Contact us</a></div></div></div></section>
 </main>
 <footer class="footer"><div class="wrap">
@@ -68,12 +68,13 @@
 <div><a class="logo" href="index.html"><svg class="logo__bolt" viewBox="0 0 32 40" aria-hidden="true"><path d="M20 0L2 23h11l-4 17 21-26H18z" fill="#ffc107"/></svg><span class="logo__text"><span class="logo__name">Himanshu<b>Electronics</b></span><span class="logo__tag">Wholesale electricals</span></span></a><p class="footer__about">Wholesale fans, wires, lighting, irons, home appliances and repaired TVs.</p></div>
 <div><h4>Shop</h4><a href="products.html">Products</a><a href="brands.html">Brands</a><a href="wholesale.html">Wholesale &amp; dealers</a><a href="repair.html">Book home service</a></div>
 <div><h4>Help</h4><a href="about.html">About us</a><a href="contact.html">Contact</a><a href="delivery.html">Delivery</a><a href="returns.html">Returns</a><a href="faq.html">FAQ</a></div>
-<div><h4>Visit &amp; call</h4><p>Himanshu Electronics<br>Address coming soon</p><a href="tel:+919639228237">9639228237</a><p>Open daily, 9:30 AM to 9:00 PM</p></div>
+<div><h4>Visit &amp; call</h4><p>Himanshu Electronics<br><span data-site="address">Address coming soon</span></p><a href="tel:+919639228237">9639228237</a><p>Open daily, 9:30 AM to 9:00 PM</p></div>
 </div>
 <div class="footer__bottom"><span>&copy; 2026 Himanshu Electronics. All rights reserved.</span><span><a style="display:inline;margin:0 10px 0 0" href="privacy.html">Privacy</a><a style="display:inline;margin:0" href="terms.html">Terms</a></span></div>
 </div></footer>
 <div class="fab"><a class="fab__call" href="tel:+919639228237"><svg class="ico" aria-hidden="true"><use href="#s-phone"/></svg>Call</a><a class="fab__wa" href="https://wa.me/919639228237" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#s-wa"/></svg>WhatsApp</a></div>
-<script src="assets/js/site.js?v=94679027"></script>
-<script src="assets/js/enquiry.js?v=94679027"></script>
+<script src="assets/js/site.js?v=94807540"></script>
+<script src="assets/js/enquiry.js?v=94807540"></script>
+<script src="assets/js/page.js?v=94807540"></script>
 </body>
 </html>

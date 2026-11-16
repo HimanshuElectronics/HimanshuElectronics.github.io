@@ -1,0 +1,4 @@
+{
+  "_help": "Add one block per photo. Put the picture in assets/images/gallery/ and write only its file name in image. section: products, shop, delivery, events. isFeatured:true shows it at the top. Or run: python3 tools/addgallery.py",
+  "items": []
+}

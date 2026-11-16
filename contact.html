@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
-<link rel="stylesheet" href="assets/css/styles.css?v=94679027">
+<link rel="stylesheet" href="assets/css/styles.css?v=94807540">
 </head>
 <body>
 <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -43,18 +43,26 @@
 </header>
 <main>
 <section class="pagehero"><div class="wrap pagehero__inner"><p class="eyebrow">Contact</p><h1>Visit or call us</h1><p>We are happy to help with rates, brands and availability.</p></div></section>
-<section class="section"><div class="wrap grid grid--2" style="gap:40px;align-items:start">
+<section class="section"><div class="wrap">
+<div class="quick"><button type="button" data-quick="product">Ask about a product</button><button type="button" data-quick="wholesale">Wholesale rates</button><button type="button" data-quick="service">Home service</button><button type="button" data-quick="feedback">Feedback</button></div>
+<div class="grid grid--2" style="gap:40px;align-items:start">
 <div>
-<div class="card" style="margin-bottom:18px"><p class="eyebrow">Phone</p><a class="big-phone" href="tel:+919639228237">9639228237</a><div class="hours"><span class="dot"></span>Open daily, 9:30 AM to 9:00 PM</div></div>
-<div class="card" style="margin-bottom:18px"><p class="eyebrow">Shop address</p><p style="margin:0">Himanshu Electronics<br>Address and map link coming soon.</p></div>
-<div class="band__btns"><a class="btn" href="tel:+919639228237"><svg class="ico" aria-hidden="true"><use href="#s-phone"/></svg> Call now</a><a class="btn btn--ghost" href="https://wa.me/919639228237?text=Hello%20Himanshu%20Electronics" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#s-wa"/></svg> WhatsApp</a></div>
+<div class="card" style="margin-bottom:18px"><p class="eyebrow">Phone</p><a class="big-phone" href="tel:+919639228237">9639228237</a><div class="hours"><span class="dot"></span>Open daily, 9:30 AM to 9:00 PM </div></div>
+<div class="card" style="margin-bottom:18px"><p class="eyebrow">Shop address</p><p style="margin:0">Himanshu Electronics<br><span data-site="address">Address coming soon.</span></p><p data-site-show="gst" hidden style="margin-top:10px">GST: <strong></strong></p></div>
+<div class="band__btns"><a class="btn" href="tel:+919639228237"><svg class="ico" aria-hidden="true"><use href="#s-phone"/></svg> Call now</a><a class="btn btn--ghost" href="https://wa.me/919639228237?text=Hello%20Himanshu%20Electronics" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#s-wa"/></svg> WhatsApp</a><a class="btn btn--ghost" data-site-show="directions" href="#" target="_blank" rel="noopener" hidden>Get directions</a><a class="btn btn--ghost" data-site-show="email" href="#" hidden><i class="ri-mail-line"></i> <span></span></a></div>
+<div class="mapbox" data-site-show="map" hidden></div>
 </div>
-<form class="card form" id="waForm"><h3>Send us a message</h3>
-<label>Your name<input name="name" required autocomplete="name"></label>
-<label>Phone<input name="phone" type="tel" required autocomplete="tel"></label>
-<label>Interested in<select name="topic"><option>Wires &amp; Cables</option><option>Fans</option><option>Lighting &amp; Bulbs</option><option>Irons</option><option>Home Appliances</option><option>Repaired TVs</option><option>Wholesale / Dealer</option><option>Other</option></select></label>
-<label>Message<textarea name="msg" rows="4"></textarea></label>
-<button class="btn btn--block" type="submit"><svg class="ico" aria-hidden="true"><use href="#s-wa"/></svg> Send on WhatsApp</button></form>
+<form class="card form" id="contactForm" novalidate><h3>Send us a message</h3>
+<label>Enquiry type<select name="type"><option value="general">General enquiry</option><option value="product">Product enquiry</option><option value="wholesale">Wholesale / dealer</option><option value="bulk">Bulk order</option><option value="service">Home service</option><option value="complaint">Complaint</option><option value="feedback">Feedback</option><option value="other">Other</option></select></label>
+<label>Your name *<input name="name" autocomplete="name"><span class="ferr" data-err="name" hidden>Please enter your name.</span></label>
+<label>Mobile number *<input name="mobile" type="tel" inputmode="tel" autocomplete="tel"><span class="ferr" data-err="mobile" hidden>Enter a valid 10 digit mobile number.</span></label>
+<label>Shop / business (optional)<input name="business" autocomplete="organization"></label>
+<label>Message *<textarea name="message" rows="4"></textarea><span class="ferr" data-err="message" hidden>Please write your message.</span></label>
+<button class="btn btn--block" type="submit"><svg class="ico" aria-hidden="true"><use href="#s-wa"/></svg> Send on WhatsApp</button>
+<button class="btn btn--block btn--ghost" type="button" id="sendEmail" hidden><i class="ri-mail-line"></i> Send by email</button>
+<div class="done" id="contactDone" hidden></div></form>
+</div>
+<div style="margin-top:44px"><h2 class="section__title">Quick answers</h2><div id="contactFaq" style="margin-top:18px"></div><p style="margin-top:14px"><a class="section__link" href="faq.html">All questions <i class="ri-arrow-right-line"></i></a></p></div>
 </div></section>
 </main>
 <footer class="footer"><div class="wrap">
@@ -62,12 +70,13 @@
 <div><a class="logo" href="index.html"><svg class="logo__bolt" viewBox="0 0 32 40" aria-hidden="true"><path d="M20 0L2 23h11l-4 17 21-26H18z" fill="#ffc107"/></svg><span class="logo__text"><span class="logo__name">Himanshu<b>Electronics</b></span><span class="logo__tag">Wholesale electricals</span></span></a><p class="footer__about">Wholesale fans, wires, lighting, irons, home appliances and repaired TVs.</p></div>
 <div><h4>Shop</h4><a href="products.html">Products</a><a href="brands.html">Brands</a><a href="wholesale.html">Wholesale &amp; dealers</a><a href="repair.html">Book home service</a></div>
 <div><h4>Help</h4><a href="about.html">About us</a><a href="contact.html">Contact</a><a href="delivery.html">Delivery</a><a href="returns.html">Returns</a><a href="faq.html">FAQ</a></div>
-<div><h4>Visit &amp; call</h4><p>Himanshu Electronics<br>Address coming soon</p><a href="tel:+919639228237">9639228237</a><p>Open daily, 9:30 AM to 9:00 PM</p></div>
+<div><h4>Visit &amp; call</h4><p>Himanshu Electronics<br><span data-site="address">Address coming soon</span></p><a href="tel:+919639228237">9639228237</a><p>Open daily, 9:30 AM to 9:00 PM</p></div>
 </div>
 <div class="footer__bottom"><span>&copy; 2026 Himanshu Electronics. All rights reserved.</span><span><a style="display:inline;margin:0 10px 0 0" href="privacy.html">Privacy</a><a style="display:inline;margin:0" href="terms.html">Terms</a></span></div>
 </div></footer>
 <div class="fab"><a class="fab__call" href="tel:+919639228237"><svg class="ico" aria-hidden="true"><use href="#s-phone"/></svg>Call</a><a class="fab__wa" href="https://wa.me/919639228237" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#s-wa"/></svg>WhatsApp</a></div>
-<script src="assets/js/site.js?v=94679027"></script>
-<script src="assets/js/enquiry.js?v=94679027"></script>
+<script src="assets/js/site.js?v=94807540"></script>
+<script src="assets/js/enquiry.js?v=94807540"></script>
+<script src="assets/js/page.js?v=94807540"></script>
 </body>
 </html>

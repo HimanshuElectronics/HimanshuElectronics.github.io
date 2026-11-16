@@ -1,0 +1,4 @@
+{
+  "_help": "Towns you deliver to. Add names inside the brackets, or run: python3 tools/adddelivery.py",
+  "areas": []
+}

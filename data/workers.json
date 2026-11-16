@@ -1,5 +1,5 @@
 {
-  "_note": "Placeholder technicians. Replace names, skills, areas with the real workers (run: python3 addworker.py).",
+  "_note": "Independent technicians (not shop employees). photo = file name in assets/images/workers/. Run: python3 tools/addworker.py",
   "workers": [
     {
       "id": "tech-1",
@@ -11,7 +11,10 @@
       ],
       "area": "Bijnor city",
       "exp": "Experience: add years",
-      "available": true
+      "available": true,
+      "phone": "",
+      "photo": "",
+      "bio": "Independent technician. Add a short introduction here."
     },
     {
       "id": "tech-2",
@@ -22,7 +25,10 @@
       ],
       "area": "Bijnor city",
       "exp": "Experience: add years",
-      "available": true
+      "available": true,
+      "phone": "",
+      "photo": "",
+      "bio": "Independent technician. Add a short introduction here."
     },
     {
       "id": "tech-3",
@@ -34,7 +40,10 @@
       ],
       "area": "Bijnor and nearby",
       "exp": "Experience: add years",
-      "available": true
+      "available": true,
+      "phone": "",
+      "photo": "",
+      "bio": "Independent technician. Add a short introduction here."
     },
     {
       "id": "tech-4",
@@ -46,7 +55,10 @@
       ],
       "area": "Bijnor city",
       "exp": "Experience: add years",
-      "available": true
+      "available": true,
+      "phone": "",
+      "photo": "",
+      "bio": "Independent technician. Add a short introduction here."
     }
   ]
 }

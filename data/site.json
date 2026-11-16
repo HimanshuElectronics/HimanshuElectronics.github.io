@@ -1,0 +1,18 @@
+{
+  "_help": "Shop details used across the site. Fill in the empty ones. mapEmbed = the src link from Google Maps > Share > Embed a map.",
+  "name": "Himanshu Electronics",
+  "phone": "9639228237",
+  "whatsapp": "919639228237",
+  "email": "",
+  "address": "",
+  "city": "Bijnor",
+  "hoursText": "Open daily, 9:30 AM to 9:00 PM",
+  "openHour": 9.5,
+  "closeHour": 21,
+  "gstNumber": "",
+  "mapUrl": "",
+  "mapEmbed": "",
+  "lat": "",
+  "lng": "",
+  "minOrderValue": ""
+}

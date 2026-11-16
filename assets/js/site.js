@@ -215,6 +215,7 @@
   }
 
   /* ---------- electricity wire + light-up (cheap: IntersectionObserver + one rAF-throttled transform) ---------- */
+  var LIT = '.pcard,.promo,.bcard,.wcard,.teaser,.card,.cats__item,.slist__item,.ocard,.gcard,.pdetail .pinfo,.faq-item,.dchip';
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var litIO = null;
   if ('IntersectionObserver' in window && !reduceMotion) {
@@ -245,32 +246,49 @@
   }
 
   window.HE = {
+    esc: esc, waLink: waLink, WA: WA,
     refresh: function (root) {
-      $$('.pcard', root).forEach(function (el) { if (litIO) litIO.observe(el); });
+      $$(LIT, root).forEach(function (el) { if (litIO && !el.__lit) { el.__lit = 1; litIO.observe(el); } });
       observeNew(root);
       if (window.RT_refreshButtons) window.RT_refreshButtons();
     }
   };
-  $$('.promo').forEach(function (el) { if (litIO) litIO.observe(el); });
+  window.HE.refresh(document);
+
+  /* ---------- hero electricity only runs while the hero is on screen ---------- */
+  var heroEl = $('.hero');
+  if (heroEl && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) { heroEl.classList.toggle('hero--off', !es[0].isIntersecting); }).observe(heroEl);
+  }
+
+  /* ---------- floating buttons hide while the footer is on screen (same idea as Rajput Traders) ---------- */
+  var footEl = $('.footer');
+  if (footEl && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) {
+      var on = es[0].isIntersecting;
+      $$('.fab,.enq-fab').forEach(function (b) { b.classList.toggle('is-hidden', on); });
+    }, { threshold: 0.02 }).observe(footEl);
+  }
 
   /* ---------- home service booking ---------- */
   var wRoot = $('#workers');
   if (wRoot) {
     var picked = '', svc = '', all = [];
     var pn = $('#pickedName'), pc = $('#pickedClear');
+    function wph(w) { return '<span class="wcard__av">' + (w.photo ? '<img src="assets/images/workers/' + encodeURIComponent(w.photo) + '" alt="' + esc(w.name) + '" loading="lazy" onerror="this.remove()">' : '') + esc(w.name.split(/\s+/).map(function (x) { return x[0]; }).join('').slice(0, 2).toUpperCase()) + '</span>'; }
     function drawWorkers() {
       var out = all.filter(function (w) { return !svc || (w.skills || []).indexOf(svc.replace('&amp;', '&')) > -1; });
       wRoot.innerHTML = out.length ? out.map(function (w) {
-        var ini = w.name.split(/\s+/).map(function (s) { return s[0]; }).join('').slice(0, 2).toUpperCase();
-        return '<article class="wcard' + (picked === w.name ? ' is-picked' : '') + '"><div class="wcard__top"><div class="wcard__av">' + esc(ini) + '</div><div><div class="wcard__name">' + esc(w.name) + '</div><div class="wcard__role">' + esc(w.role || '') + '</div></div></div>' +
-          '<div class="wcard__tags">' + (w.skills || []).map(function (s) { return '<span>' + esc(s) + '</span>'; }).join('') + '</div>' +
+        return '<article class="wcard' + (picked === w.name ? ' is-picked' : '') + '"><a class="wcard__top" href="worker.html?id=' + encodeURIComponent(w.id) + '">' + wph(w) + '<span><span class="wcard__name">' + esc(w.name) + '</span><span class="wcard__role">' + esc(w.role || '') + '</span></span></a>' +
+          '<div class="wcard__tags">' + (w.skills || []).map(function (x) { return '<span>' + esc(x) + '</span>'; }).join('') + '</div>' +
           '<p class="wcard__meta">' + esc(w.area || '') + (w.exp ? ' &middot; ' + esc(w.exp) : '') + '</p>' +
           (w.available === false ? '<p class="wcard__busy">Busy today. You can still book another day.</p>' : '') +
-          '<button type="button" class="btn" data-pick="' + esc(w.name) + '">' + (picked === w.name ? 'Selected' : 'Select this worker') + '</button></article>';
-      }).join('') : '<div class="empty">No worker listed for this service yet. Choose Any available worker below, or call us.</div>';
+          '<div class="wcard__acts"><a class="btn btn--ghost" href="worker.html?id=' + encodeURIComponent(w.id) + '">Details</a><button type="button" class="btn" data-pick="' + esc(w.name) + '">' + (picked === w.name ? 'Selected' : 'Select') + '</button></div></article>';
+      }).join('') : '<div class="empty">No technician listed for this service yet. Choose Any available technician below, or call us.</div>';
+      window.HE.refresh(wRoot);
     }
-    function setPick(n) { picked = n; pn.textContent = n || 'Any available worker'; pc.hidden = !n; drawWorkers(); }
-    fetch('data/workers.json').then(function (r) { return r.json(); }).then(function (d) { all = d.workers || []; drawWorkers(); })
+    function setPick(n) { picked = n; pn.textContent = n || 'Any available technician'; pc.hidden = !n; drawWorkers(); }
+    fetch('data/workers.json').then(function (r) { return r.json(); }).then(function (d) { all = d.workers || []; var pre = new URLSearchParams(location.search).get('worker'); var pw = all.filter(function (w) { return w.id === pre; })[0]; if (pw) setPick(pw.name); else drawWorkers(); })
       .catch(function () { wRoot.innerHTML = '<div class="empty">Could not load workers. Please call us on 9639228237.</div>'; });
     wRoot.addEventListener('click', function (e) {
       var b = e.target.closest('[data-pick]'); if (!b) return;
@@ -290,9 +308,17 @@
     bf.addEventListener('submit', function (e) {
       e.preventDefault();
       var d = new FormData(bf);
-      var msg = 'Hello Himanshu Electronics, I want to book a home service.\nWorker: ' + (picked || 'Any available worker') + '\nService: ' + d.get('service') +
-        '\nDate: ' + d.get('date') + '\nSlot: ' + d.get('slot') + '\nName: ' + d.get('name') + '\nPhone: ' + d.get('phone') + '\nAddress: ' + d.get('address') + '\nProblem: ' + (d.get('msg') || '-');
+      var w = all.filter(function (x) { return x.name === picked; })[0];
+      var msg = 'Hello Himanshu Electronics, I want to book a home service.\nTechnician: ' + (picked || 'Any available technician') + (w && w.phone ? ' (' + w.phone + ')' : '') + '\nService: ' + d.get('service') +
+        '\nDate: ' + d.get('date') + '\nSlot: ' + d.get('slot') + '\nName: ' + d.get('name') + '\nPhone: ' + d.get('phone') + '\nAddress: ' + d.get('address') + '\nProblem: ' + (d.get('msg') || '-') +
+        '\n\nPlease call the technician to confirm the visit.';
       window.open(waLink(msg), '_blank', 'noopener');
+      var done = $('#bookDone');
+      if (done) {
+        done.innerHTML = '<strong>Almost done.</strong> Press <b>Send</b> in WhatsApp to share your request. Then please <b>call the technician to confirm</b> the visit. Technicians are independent professionals.' +
+          (w && w.phone ? '<br><a class="btn" style="margin-top:12px" href="tel:+91' + esc(w.phone) + '">Call ' + esc(w.name) + '</a>' : '<br>Not sure which technician? Call the shop on 9639228237.');
+        done.hidden = false; done.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
     });
   }
 

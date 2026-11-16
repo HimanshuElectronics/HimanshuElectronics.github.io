@@ -337,8 +337,8 @@ details p{color:var(--mut);margin-top:12px}
 .pcard__add.is-added{background:var(--ink);color:var(--yellow);border-color:var(--ink)}
 
 /* ---------- electricity wires (SVG; only dash-offset changes while scrolling) ---------- */
-.wire{position:fixed;inset:0;z-index:1;pointer-events:none;contain:strict}
-.wire__svg{width:100%;height:100%;display:block}
+.wire{position:fixed;top:0;left:0;width:100%;height:100vh;height:100lvh;z-index:1;pointer-events:none;contain:layout paint size;transform:translate3d(0,0,0);will-change:transform}
+.wire__svg{width:100%;height:100%;display:block;position:absolute;inset:0}
 .wire__svg path{fill:none;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
 .wp{stroke:rgba(255,193,7,.14);stroke-width:1.5}
 .wg{stroke:#ffc107;stroke-width:3;stroke-dasharray:70 430;opacity:.18;transition:opacity .35s,stroke-width .35s}
@@ -509,3 +509,62 @@ html{touch-action:pan-x pan-y}
 .ferr{display:block;color:#ff9b9b;font-size:13px;margin-top:4px}
 @media(max-width:800px){.duo{grid-template-columns:minmax(0,1fr)}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+/* ---------- floating buttons hide over the footer ---------- */
+.fab,.enq-fab{transition:opacity .25s,transform .25s,visibility .25s}
+.fab.is-hidden,.enq-fab.is-hidden{opacity:0;visibility:hidden;pointer-events:none;transform:translateY(24px)}
+
+/* ---------- every white card lights up when it passes the middle of the screen ---------- */
+.bcard,.wcard,.teaser,.card,.ocard,.gcard,.dchip,.faq-item,.slist__item{transition:transform .25s,box-shadow .45s,border-color .45s}
+.bcard.is-lit,.wcard.is-lit,.teaser.is-lit,.card.is-lit,.ocard.is-lit,.gcard.is-lit,.dchip.is-lit,.faq-item.is-lit,.slist__item.is-lit{box-shadow:0 0 0 2px var(--yellow),0 0 34px rgba(255,193,7,.38);border-color:var(--yellow)}
+
+/* ---------- hero electricity (runs only while the hero is on screen) ---------- */
+.hero__bolts{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.hero__bolts path{fill:none;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.hb{stroke:rgba(255,193,7,.3);stroke-width:1.5}
+.hg{stroke:#ffd34d;stroke-width:3;stroke-dasharray:90 910;filter:drop-shadow(0 0 6px #ffc107);animation:hflow 5.5s linear infinite}
+.hg:nth-of-type(2n){animation-duration:7.5s;animation-delay:-2s}
+.hg:nth-of-type(3n){animation-duration:9s;animation-delay:-4s}
+@keyframes hflow{to{stroke-dashoffset:-1000}}
+.hero--off .hg{animation-play-state:paused}
+.hero__slides{position:relative;z-index:1}
+@media(prefers-reduced-motion:reduce){.hg{animation:none}}
+
+/* ---------- technicians: photos + details ---------- */
+.wcard__av{position:relative;overflow:hidden}
+.wcard__av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.wcard__top{color:inherit}
+.wcard__top>span:last-child{display:grid;min-width:0}
+.wcard__acts{display:flex;gap:8px;margin-top:auto}.wcard__acts .btn{flex:1;padding:0 12px}
+.wphoto{position:relative;aspect-ratio:1/1;border-radius:16px;overflow:hidden;background:linear-gradient(160deg,var(--navy-700),var(--navy-600));display:grid;place-items:center}
+.wphoto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.wphoto__ini{font-size:72px;font-weight:800;color:var(--yellow)}
+.winfo{list-style:none;display:grid;gap:8px;margin:16px 0;padding:0}
+.winfo li{display:flex;gap:12px;font-size:15px}.winfo b{min-width:96px;color:var(--mut)}.winfo a{color:var(--yellow);font-weight:600}
+.done{margin-top:18px;padding:16px;border-radius:12px;background:rgba(255,193,7,.12);border:1px solid var(--yellow);font-size:14.5px}
+
+/* ---------- map, badge, gallery, delivery, faq ---------- */
+.mapbox{border-radius:16px;overflow:hidden;border:1px solid var(--line);margin-top:18px}
+.mapbox iframe{display:block;width:100%;height:340px;border:0}
+.mapbox:has(a.btn){padding:16px}
+.badge{display:inline-block;padding:3px 12px;border-radius:99px;font-size:12px;font-weight:700;margin-left:8px}
+.badge--open{background:rgba(61,220,132,.18);color:#3ddc84}.badge--closed{background:rgba(255,155,155,.18);color:#ff9b9b}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.gcard{position:relative;display:block;padding:0;border:2px solid transparent;border-radius:14px;overflow:hidden;background:#fff;cursor:zoom-in;aspect-ratio:4/3;font-family:inherit}
+.gcard img{width:100%;height:100%;object-fit:cover;display:block}
+.gcard span{position:absolute;left:0;right:0;bottom:0;padding:22px 12px 10px;background:linear-gradient(transparent,rgba(6,19,48,.9));color:#fff;font-size:13px;text-align:left}
+.lightbox{position:fixed;inset:0;z-index:120;background:rgba(3,9,22,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:16px}
+.lightbox--on{display:flex}
+.lightbox img{max-width:100%;max-height:78vh;object-fit:contain;border-radius:8px}
+.lightbox__cap{color:#fff;margin-top:12px;font-size:14px;text-align:center}
+.lightbox button{position:absolute;width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.16);color:#fff;font-size:26px;cursor:pointer}
+.lightbox [data-x]{top:14px;right:14px}.lightbox [data-prev]{left:12px;top:50%}.lightbox [data-next]{right:12px;top:50%}
+.dchips{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+.dchip{display:inline-flex;gap:6px;align-items:center;padding:8px 16px;border-radius:99px;background:#fff;color:var(--ink);font-weight:600;font-size:14px;border:2px solid transparent}
+.faq-item{margin-bottom:10px}.faq-item[hidden]{display:none}
+.faqsearch{margin-bottom:16px}
+.quick{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:20px}
+.quick button{padding:14px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:#fff;font-family:inherit;font-weight:600;font-size:14px;cursor:pointer}
+.quick button:hover{border-color:var(--yellow)}
+.ferr{color:#ff9b9b;font-size:12px;text-transform:none;letter-spacing:0}
+@media(max-width:900px){.pdetail{grid-template-columns:minmax(0,1fr)}.wphoto{max-width:340px}}
