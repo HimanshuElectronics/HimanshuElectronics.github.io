@@ -613,3 +613,18 @@ html{touch-action:pan-x pan-y}
 .updates__go{margin-left:auto;font-size:1.25rem;color:var(--yellow);flex:0 0 auto}
 @media(max-width:420px){.updates__label{padding:0 .7rem;font-size:.72rem}.updates__text strong{font-size:.95rem}.updates__text span{font-size:.84rem}}
 @media(prefers-reduced-motion:reduce){.updates__item{transition:none}}
+
+/* ---------- crossing moving tape strips (home service) ---------- */
+.tape-wrap{overflow:hidden;padding:46px 0 40px}
+.tape{display:block;position:relative;height:150px;color:var(--ink)}
+.tape__strip{position:absolute;left:-6%;width:112%;overflow:hidden;padding:10px 0;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.tape__strip--a{top:6px;background:var(--yellow);transform:rotate(-3deg);z-index:2}
+.tape__strip--b{top:62px;background:#e6ac00;transform:rotate(2.5deg);z-index:1}
+.tape__track{display:flex;align-items:center;width:max-content;gap:0;animation:tapeL 28s linear infinite;will-change:transform}
+.tape__strip--b .tape__track{animation-name:tapeR;animation-duration:32s}
+.tape__track span{font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(26px,6.5vw,46px);line-height:1.1;white-space:nowrap;padding:0 22px;letter-spacing:.01em}
+.tape__track i{width:10px;height:10px;border-radius:50%;background:var(--ink);flex:0 0 auto}
+@keyframes tapeL{to{transform:translateX(-25%)}}
+@keyframes tapeR{from{transform:translateX(-25%)}to{transform:none}}
+.tape:hover .tape__track{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.tape__track{animation:none}}

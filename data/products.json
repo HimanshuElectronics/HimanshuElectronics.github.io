@@ -8,7 +8,7 @@
     "packagingInfo": null,
     "description": "Wires for home and shop wiring. Ask for sizes and colours.",
     "images": [],
-    "price": null,
+    "price": 1450,
     "featured": true,
     "sortOrder": 1,
     "status": "published"
@@ -22,7 +22,7 @@
     "packagingInfo": null,
     "description": "Flexible cables for appliances and extensions.",
     "images": [],
-    "price": null,
+    "price": 1290,
     "featured": false,
     "sortOrder": 2,
     "status": "published"
@@ -36,7 +36,7 @@
     "packagingInfo": null,
     "description": "Multi-core cables for larger jobs and contractors.",
     "images": [],
-    "price": null,
+    "price": 1980,
     "featured": false,
     "sortOrder": 3,
     "status": "published"
@@ -50,7 +50,7 @@
     "packagingInfo": null,
     "description": "Ceiling fans in different sizes and colours.",
     "images": [],
-    "price": null,
+    "price": 2350,
     "featured": true,
     "sortOrder": 4,
     "status": "published"
@@ -64,7 +64,7 @@
     "packagingInfo": null,
     "description": "Compact fans for desks and small rooms.",
     "images": [],
-    "price": null,
+    "price": 1650,
     "featured": false,
     "sortOrder": 5,
     "status": "published"
@@ -78,7 +78,7 @@
     "packagingInfo": null,
     "description": "Wall-mounted fans for shops and homes.",
     "images": [],
-    "price": null,
+    "price": 1850,
     "featured": false,
     "sortOrder": 6,
     "status": "published"
@@ -92,7 +92,7 @@
     "packagingInfo": null,
     "description": "Height-adjustable stand fans.",
     "images": [],
-    "price": null,
+    "price": 2850,
     "featured": false,
     "sortOrder": 7,
     "status": "published"
@@ -106,7 +106,7 @@
     "packagingInfo": null,
     "description": "Exhaust fans for kitchens and bathrooms.",
     "images": [],
-    "price": null,
+    "price": 1150,
     "featured": false,
     "sortOrder": 8,
     "status": "published"
@@ -120,7 +120,7 @@
     "packagingInfo": null,
     "description": "Energy-saving LED bulbs in different watts.",
     "images": [],
-    "price": null,
+    "price": 99,
     "featured": true,
     "sortOrder": 9,
     "status": "published"
@@ -134,7 +134,7 @@
     "packagingInfo": null,
     "description": "LED tube lights for rooms and shops.",
     "images": [],
-    "price": null,
+    "price": 180,
     "featured": false,
     "sortOrder": 10,
     "status": "published"
@@ -148,7 +148,7 @@
     "packagingInfo": null,
     "description": "Slim LED panel lights for offices and showrooms.",
     "images": [],
-    "price": null,
+    "price": 650,
     "featured": false,
     "sortOrder": 11,
     "status": "published"
@@ -162,7 +162,7 @@
     "packagingInfo": null,
     "description": "Everyday electric irons for home use.",
     "images": [],
-    "price": null,
+    "price": 690,
     "featured": true,
     "sortOrder": 12,
     "status": "published"
@@ -176,7 +176,7 @@
     "packagingInfo": null,
     "description": "Steam irons for smooth, quick ironing.",
     "images": [],
-    "price": null,
+    "price": 1490,
     "featured": false,
     "sortOrder": 13,
     "status": "published"
@@ -190,7 +190,7 @@
     "packagingInfo": null,
     "description": "Electric kettles for the kitchen.",
     "images": [],
-    "price": null,
+    "price": 790,
     "featured": false,
     "sortOrder": 14,
     "status": "published"

@@ -35,7 +35,9 @@
     var rbox = $('#related');
     if (!rel.length) { rbox.parentNode.parentNode.hidden = true; return; }
     rbox.innerHTML = rel.map(function (x) {
-      return '<article class="pcard" data-id="' + esc(x.id) + '"><a class="pcard__media" href="product.html?slug=' + encodeURIComponent(x.slug || x.id) + '"><svg aria-hidden="true"><use href="#' + esc(cat.icon) + '"/></svg></a><div class="pcard__body"><h3 class="pcard__name"><a href="product.html?slug=' + encodeURIComponent(x.slug || x.id) + '">' + esc(x.name) + '</a></h3><p class="pcard__meta">' + esc(cat.name) + '</p><a class="pcard__btn" style="margin-top:12px" href="product.html?slug=' + encodeURIComponent(x.slug || x.id) + '">View</a></div></article>';
+      return '<article class="pcard" data-id="' + esc(x.id) + '"><a class="pcard__media" href="product.html?slug=' + encodeURIComponent(x.slug || x.id) + '"><svg aria-hidden="true"><use href="#' + esc(cat.icon) + '"/></svg></a><div class="pcard__body"><h3 class="pcard__name"><a href="product.html?slug=' + encodeURIComponent(x.slug || x.id) + '">' + esc(x.name) + '</a></h3><p class="pcard__meta">' + esc(cat.name) + '</p><p class="pcard__price">' + (x.price ? 'MRP &#8377;' + esc(x.price) : 'Contact for price') + '</p><a class="pcard__btn" style="margin-top:12px" href="product.html?slug=' + encodeURIComponent(x.slug || x.id) + '">View</a></div></article>';
     }).join('');
+    if (window.HE) window.HE.refresh(rbox);
+    if (window.RT_refreshButtons) window.RT_refreshButtons();
   }).catch(function () { $('#pdetail').innerHTML = '<div class="empty">Could not load the product. Please call 9639228237.</div>'; });
 })();
