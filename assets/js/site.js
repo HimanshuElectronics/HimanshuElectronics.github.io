@@ -128,8 +128,8 @@
       if (allcatMenu && d.categories.length) allcatMenu.innerHTML = d.categories.map(function (c) { return '<a class="nav__sublink" href="products.html?cat=' + esc(c.slug) + '"><svg aria-hidden="true"><use href="#' + esc(c.icon || 'i-box') + '"/></svg>' + esc(c.name) + '</a>'; }).join('');
       if (homecats && d.categories.length) homecats.innerHTML = d.categories.map(function (c) {
         return '<a class="cats__item" href="products.html?cat=' + esc(c.slug) + '"><span class="cats__icon"><svg aria-hidden="true"><use href="#' + esc(c.icon || 'i-box') + '"/></svg></span><span class="cats__name">' + esc(c.name) + '</span><span class="cats__sub">' + esc(c.sub || '') + '</span></a>';
-      }).join('') + '<a class="cats__item" href="wholesale.html"><span class="cats__icon"><svg aria-hidden="true"><use href="#i-box"/></svg></span><span class="cats__name">Bulk Orders</span><span class="cats__sub">Dealer rates</span></a>';
-      if (homeBrands && d.brands.length) homeBrands.innerHTML = brandCards(d.brands.slice(0, 6), d.products, false) + (d.brands.length > 6 ? '<a class="bcard bcard--more" href="brands.html">and more brands...</a>' : '');
+      }).join('') + '<a class="cats__item" href="wholesale.html"><span class="cats__icon"><svg aria-hidden="true"><use href="#i-box"/></svg></span><span class="cats__name">Bulk Orders</span><span class="cats__sub">Dealer rates</span></a>'; if (homecats) window.HE.refresh(homecats);
+      if (homeBrands && d.brands.length) homeBrands.innerHTML = brandCards(d.brands.slice(0, 6), d.products, true) + (d.brands.length > 6 ? '<a class="bcard bcard--more" href="brands.html">and more brands...</a>' : ''); window.HE.refresh(homeBrands);
       if (brandList) {
         brandList.innerHTML = d.brands.length ? brandCards(d.brands, d.products, true) : '<div class="empty">Brands coming soon. Call us on 9639228237.</div>';
         var bc = $('#brandchips');
@@ -340,7 +340,7 @@
       if (!list.length) return;
       uHost.innerHTML = '<div class="wrap"><div class="updates__bar" role="region" aria-label="Latest updates"><span class="updates__label">Latest<br>Update</span><div class="updates__viewport">' +
         list.map(function (u, i) {
-          var inner = '<strong>' + esc(u.title) + '</strong>' + (u.text ? '<span>' + esc(u.text) + '</span>' : '');
+          var link0 = /^(https?:\/\/|[a-z0-9_-]+\.html)/i.test(u.link || ''); var inner = '<i class="ri-megaphone-line updates__icon" aria-hidden="true"></i><span class="updates__text"><strong>' + esc(u.title) + '</strong>' + (u.text ? '<span>' + esc(u.text) + '</span>' : '') + '</span>' + (link0 ? '<i class="ri-arrow-right-s-line updates__go" aria-hidden="true"></i>' : '');
           var link = /^(https?:\/\/|[a-z0-9_-]+\.html)/i.test(u.link || '') ? u.link : '';
           return '<div class="updates__item' + (i === 0 ? ' is-active' : '') + '">' + (link ? '<a class="updates__slide" href="' + esc(link) + '">' + inner + '</a>' : '<div class="updates__slide">' + inner + '</div>') + '</div>';
         }).join('') + '</div></div></div>';

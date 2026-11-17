@@ -436,7 +436,7 @@ main,.footer,.trust{position:relative;z-index:2}
 .slist__kind{grid-row:span 2;align-self:center;font-size:11px;font-weight:700;text-transform:uppercase;color:var(--ink);background:var(--yellow);border-radius:6px;padding:4px 8px}
 .slist__t{font-weight:600}.slist__s{font-size:13px;color:var(--mut)}
 @media(max-width:800px){.pdetail{grid-template-columns:minmax(0,1fr)}}
-@media(max-width:560px){.updates__label{display:none}.updates__bar{padding-left:12px}}
+
 
 /* ---------- enquiry list (list icon, drawer) ---------- */
 .enq-fab{position:fixed;right:16px;bottom:86px;z-index:62;width:54px;height:54px;border-radius:50%;border:0;background:var(--yellow);color:var(--ink);font-size:26px;display:grid;place-items:center;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.45)}
@@ -592,3 +592,24 @@ html{touch-action:pan-x pan-y}
   .nav__drop a i{color:var(--yellow)}
   .nav__drop a{padding:13px 12px}
 }
+
+.cats__item.is-lit .cats__icon{box-shadow:0 0 0 3px var(--yellow),0 0 26px rgba(255,193,7,.6);background:#ffe9a6}
+.cats__icon{transition:box-shadow .45s,background .45s}
+.bcard--big{border:2px solid transparent}
+
+/* ===== Latest updates: same layout as Rajput Traders (label always shown, text wraps) ===== */
+.cats{padding-top:26px}
+.updates{padding:.9rem 0 .4rem}
+.updates__bar{gap:0;background:var(--navy-700);border:1px solid var(--yellow);box-shadow:0 4px 14px rgba(0,0,0,.3);align-items:stretch}
+.updates__label{background:var(--yellow);color:var(--ink);text-align:center;line-height:1.3;font-weight:800;letter-spacing:.05em;font-size:.78rem;padding:0 1rem;display:flex;align-items:center}
+.updates__viewport{display:grid;position:relative;flex:1;min-width:0;min-height:0}
+.updates__item{position:static;grid-area:1/1;inset:auto;display:block;opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s;pointer-events:none}
+.updates__item.is-active{position:static;opacity:1;transform:none;pointer-events:auto}
+.updates__slide{display:flex;flex-direction:row;align-items:center;gap:.7rem;height:100%;padding:.8rem .9rem;color:#fff;font-size:inherit}
+.updates__icon{color:var(--yellow);font-size:1.5rem;flex:0 0 auto}
+.updates__text{display:flex;flex-direction:column;min-width:0;line-height:1.35;gap:.1rem}
+.updates__text strong{font-size:1rem;color:#fff;white-space:normal}
+.updates__text span,.updates__slide span{color:#dbe4f7;font-size:.88rem;white-space:normal}
+.updates__go{margin-left:auto;font-size:1.25rem;color:var(--yellow);flex:0 0 auto}
+@media(max-width:420px){.updates__label{padding:0 .7rem;font-size:.72rem}.updates__text strong{font-size:.95rem}.updates__text span{font-size:.84rem}}
+@media(prefers-reduced-motion:reduce){.updates__item{transition:none}}
