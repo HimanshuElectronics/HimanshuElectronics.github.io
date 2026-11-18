@@ -120,6 +120,6 @@
   var listeners = [];
   var _changed = changed;
   changed = function () { _changed(); listeners.forEach(function (f) { try { f(); } catch (x) {} }); };
-  window.HE_enq = { ids: ids, qty: qty, item: function (id) { return byId[String(id)] || null; }, total: total, catalog: catalog, open: open, onChange: function (f) { listeners.push(f); }, KEY: KEY, CKEY: 'he_customer_v1' };
+  window.HE_enq = { clear: function () { items = {}; changed(); }, count: function () { return Object.keys(items).length; }, ids: ids, qty: qty, item: function (id) { return byId[String(id)] || null; }, total: total, catalog: catalog, open: open, onChange: function (f) { listeners.push(f); }, KEY: KEY, CKEY: 'he_customer_v1' };
   init();
 })();

@@ -53,7 +53,7 @@
   }
   $('of-send').addEventListener('click', function (e) {
     if (!validate()) { e.preventDefault(); return; }
-    try { localStorage.setItem(E.CKEY, JSON.stringify({ name: $('of-name').value.trim(), mobile: $('of-mobile').value.trim(), business: $('of-business').value.trim(), city: $('of-city').value.trim() })); } catch (x) {}
+    try { if (localStorage.getItem('he_remember') === 'off') return; localStorage.setItem(E.CKEY, JSON.stringify({ name: $('of-name').value.trim(), mobile: $('of-mobile').value.trim(), business: $('of-business').value.trim(), city: $('of-city').value.trim() })); } catch (x) {}
     this.setAttribute('href', 'https://wa.me/' + WA + '?text=' + encodeURIComponent(message()));
   });
   function start() {
