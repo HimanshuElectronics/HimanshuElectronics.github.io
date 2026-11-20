@@ -18,6 +18,14 @@ pack = input('Size / pack (example: 1200 mm) or press Enter to skip: ').strip()
 price_raw = input('Price in rupees, numbers only, or press Enter to keep "Contact for price": ').strip()
 price = int(price_raw) if price_raw.isdigit() else None
 desc = c.ask_line('Short description (optional, press Enter to skip): ')
+colors = []
+print('Colours (optional). Type like  White=#f2f2f2  or just a name. Press Enter on an empty line to finish.')
+while True:
+    v = input('Colour: ').strip()
+    if not v:
+        break
+    n, _, h = v.partition('=')
+    colors.append({'name': n.strip(), 'hex': h.strip() or '#999999'})
 feat = input('Show on the home page Popular Products? (y/n): ').strip().lower() == 'y'
 
 slug = c.slugify(((brands[brand] + ' ') if brand else '') + name)
@@ -27,7 +35,7 @@ photos = c.ask_photos(slug)
 
 pid = max([p.get('id', 0) for p in prods] + [0]) + 1
 prods.append({'id': pid, 'name': name, 'slug': slug, 'categoryId': cat, 'brandId': brand or None,
-              'packagingInfo': pack or None, 'description': desc or None, 'images': photos, 'price': price,
+              'packagingInfo': pack or None, 'description': desc or None, 'images': photos, 'colors': colors or None, 'price': price,
               'featured': feat, 'sortOrder': pid, 'status': 'published'})
 c.save('products.json', prods)
 print('\nAdded: %s (%s) with %d photo(s). Total products: %d' % (name, cats[cat], len(photos), len(prods)))
